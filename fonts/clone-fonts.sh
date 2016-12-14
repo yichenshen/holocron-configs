@@ -4,9 +4,9 @@ git clone https://github.com/google/fonts ~/.fonts/google-fonts
 
 wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK.ttc.zip
 
-mkdir -p ~/.font/NotoSansCJK
+mkdir -p ~/.fonts/NotoSansCJK
 
-unzip NotoSansCJK.ttc.zip -d ~/.font/NotoSansCJK
+unzip NotoSansCJK.ttc.zip -d ~/.fonts/NotoSansCJK
 
 rm -f NotoSansCJK.ttc.zip
 
