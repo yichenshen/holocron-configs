@@ -7,8 +7,6 @@ Font configurations here if for:
 
 ## Chinese Fonts
 
----
-
 1. Install the Noto Sans CJK fonts.
   - https://www.google.com/get/noto/help/cjk/ OR
   - https://github.com/googlei18n/noto-cjk OR
@@ -18,8 +16,6 @@ Font configurations here if for:
   - `~/.config/fontconfig/fonts.conf` for local setting
 
 ## Google fonts
-
----
 
 Run `clone-fonts.sh`. This will clone all [Google fonts](https://github.com/google/fonts), plus [Noto Sans CJK](https://github.com/googlei18n/noto-cjk) into `~/fonts`.
 
