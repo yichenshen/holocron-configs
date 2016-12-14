@@ -2,6 +2,11 @@
 
 These are configurations and templates for TeX based systems. They are created based on the packages and fonts included in 'texlive-full', as well as `latexmk`.
 
+## Dependencies
+
+ - latexmk
+ - texlive-full
+
 ## latexmk
 
 Place `.latexmkrc` in your home directory. Then, execute `latexmk` in the folder with the `.tex` file to build the a PDF.
@@ -33,3 +38,4 @@ The `latexmk` configuration makes use of LuaLaTeX to produce PDFs. On top of tha
  - Math Font: Latin Modern Math
 
 > You can copy `TexDocument.tex` to `~/Templates` add a template entry in nautilus.
+
