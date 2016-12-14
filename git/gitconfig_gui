@@ -1,0 +1,73 @@
+[user]
+	name =
+  email =
+  signingkey =
+[diff]
+  external = ~/bin/diff.py
+[push]
+  default = simple
+[alias]
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+  fl = log -u
+  dl = "!git ll -1"
+  dlc = diff --cached HEAD^
+  dr  = "!f() { git diff "$1"^.."$1"; }; f"
+  lc  = "!f() { git ll "$1"^.."$1"; }; f"
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+  f = "!git ls-files | grep -i"
+  grep = grep -Ii
+  gr = grep -Ii
+  gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+  la = "!git config -l | grep alias | cut -c 7-"
+  assume = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+  unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+  assumeall = "!git s -s | awk '{if ($1 == "M") print $2}' | xargs git assume"
+  lasttag = describe --tags --abbrev=0
+  lt = describe --tags --abbrev=0
+  co = checkout
+  cob = checkout -b
+  br = branch
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+  diff = diff --word-diff
+  dc = diff --cached
+  cp = cherry-pick
+  c = commit -s
+  s = status
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  sl = stash list
+  sa = stash apply
+  ss = stash save
+  sp = stash pop
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  try = merge --no-commit --no-ff
+[core]
+  editor = vim
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
+[credential]
+  helper = cache
+[merge]
+  tool = melddiff3
+  conflictstyle = diff3
+[mergetool "melddiff3"]
+  cmd = meld $LOCAL $MERGED $REMOTE --auto-merge
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
