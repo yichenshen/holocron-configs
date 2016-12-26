@@ -11,9 +11,11 @@ Font configurations here if for:
   - https://github.com/googlei18n/noto-cjk (repo history is HUGE) OR
   - https://www.google.com/get/noto/help/cjk/ OR
   - Install all fonts, see [below](#google-fonts)
-2. Copy `10-chinese-font.conf` to:
-  - `/etc/fonts/conf.d/` for global setting OR
-  - `~/.config/fontconfig/fonts.conf` for local setting
+2. Copy `30-chinese-font.conf` to:
+  - `~/.config/fontconfig/fonts.conf` for local setting OR
+  - For global setting
+    1. Copy it to `/usr/share/fontconfig/conf.avail`
+    2. Symlink it to `/etc/fonts/conf.d/` with `ln -s /usr/share/fontconfig/conf.avail/30-chinese-fonts.conf /etc/fonts/conf.d`
 
 ## Google fonts
 
