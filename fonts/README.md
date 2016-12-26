@@ -11,11 +11,13 @@ Font configurations here if for:
   - https://github.com/googlei18n/noto-cjk (repo history is HUGE) OR
   - https://www.google.com/get/noto/help/cjk/ OR
   - Install all fonts, see [below](#google-fonts)
-2. Copy `30-chinese-font.conf` to:
+2. Copy `58-noto-sans-cjk-sc.conf` to:
   - `~/.config/fontconfig/fonts.conf` for local setting OR
   - For global setting
     1. Copy it to `/usr/share/fontconfig/conf.avail`
-    2. Symlink it to `/etc/fonts/conf.d/` with `ln -s /usr/share/fontconfig/conf.avail/30-chinese-fonts.conf /etc/fonts/conf.d`
+    2. Symlink it to `/etc/fonts/conf.d/` with `ln -s /usr/share/fontconfig/conf.avail/59-noto-sans-cjk-sc.conf /etc/fonts/conf.d`
+
+> The rule here with the numbering is to place it right after the first fallback font. This is so since Noto Sans CJK does not have a serif font.
 
 ## Google fonts
 
