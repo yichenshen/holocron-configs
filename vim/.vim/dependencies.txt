@@ -1,0 +1,7 @@
+vim-autocomplete:
+  astyle: For C/C++ styling
+  yapf[pip]: For Python styling
+  ruby-beautify[gem]: For ruby formatting
+
+ag.vim:
+  silversearcher-ag: File searcher
