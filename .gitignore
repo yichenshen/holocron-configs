@@ -1,2 +1,6 @@
-# Vim Plugin Installs
+# vim-plug installs
 vim/.vim/plugged/
+
+# fish user specific files
+fish/fishd.*
+fish/completions/
