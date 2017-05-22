@@ -15,7 +15,7 @@ Font configurations here if for:
   - `~/.config/fontconfig/fonts.conf` for local setting OR
   - For global setting
     1. Copy it to `/usr/share/fontconfig/conf.avail`
-    2. Symlink it to `/etc/fonts/conf.d/` with `ln -s /usr/share/fontconfig/conf.avail/59-noto-cjk-sc.conf /etc/fonts/conf.d`
+    2. Symlink it to `/etc/fonts/conf.d/` with `ln -s /usr/share/fontconfig/conf.avail/58-noto-cjk-sc.conf /etc/fonts/conf.d`
 
 > The rule here with the numbering is to place it right after the first fallback font.
 
