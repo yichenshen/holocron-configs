@@ -24,7 +24,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 
 " Language Support
 Plug 'dag/vim-fish'
