@@ -4,6 +4,3 @@ function! CoffeeScriptFold()
 endfunction
 call CoffeeScriptFold()
 
-" ultisnips
-UltiSnipsAddFiletypes coffee
-

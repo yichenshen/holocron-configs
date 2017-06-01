@@ -19,5 +19,4 @@ inoremap <buffer> $r return
 inoremap <buffer> $f //--- PH<esc>FP2xi
 
 " ultisnips
-UltiSnipsAddFiletypes javascript
 UltiSnipsAddFiletypes javascript-node

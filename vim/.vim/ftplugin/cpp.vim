@@ -9,5 +9,3 @@ nmap <silent> gsh :FSSplitLeft<cr>
 nmap <silent> gsk :FSSplitAbove<cr>
 nmap <silent> gsj :FSSplitBelow<cr>
 
-" Ultisnips
-UltiSnipsAddFiletypes cpp

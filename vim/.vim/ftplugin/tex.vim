@@ -14,6 +14,5 @@ let g:Tex_ViewRule_ps = 'evince_dbus'
 let g:Tex_ViewRule_dvi = 'evince_dbus'
 
 " Ultisnips
-UltiSnipsAddFiletypes tex
 UltiSnipsAddFiletypes texmath
 
