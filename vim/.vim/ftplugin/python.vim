@@ -17,3 +17,6 @@ map <buffer> <leader>D ?def
 
 " syntastic
 let g:syntastic_python_checkers=['python']
+
+UltiSnipsAddFiletypes python
+

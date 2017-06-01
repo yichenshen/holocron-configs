@@ -6,27 +6,31 @@ call plug#begin('~/.vim/plugged')
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'amix/open_file_under_cursor.vim'
 Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'amix/open_file_under_cursor.vim'
+Plug 'derekwyatt/vim-fswitch'
 
 " Editor Functions
 Plug 'tpope/vim-surround'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'Chiel92/vim-autoformat'
-Plug 'vim-syntastic/syntastic'
-Plug 'rking/ag.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-expand-region'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'jiangmiao/auto-pairs'
-Plug 'derekwyatt/vim-fswitch'
+Plug 'Chiel92/vim-autoformat'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
+Plug 'vim-syntastic/syntastic'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Language Support
 Plug 'dag/vim-fish'
