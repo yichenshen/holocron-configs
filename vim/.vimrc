@@ -8,6 +8,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'amix/open_file_under_cursor.vim'
+Plug 'majutsushi/tagbar'
 
 " Editor Functions
 Plug 'tpope/vim-surround'
@@ -21,6 +22,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'vim-syntastic/syntastic'
 Plug 'rking/ag.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'derekwyatt/vim-fswitch'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
@@ -32,6 +34,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
 " Plug 'vim-scripts/nginx.vim'
-Plug 'keith/swift.vim'
+" Plug 'keith/swift.vim'
+" Plug 'solarnz/thrift.vim'
 
 call plug#end()
