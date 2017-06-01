@@ -8,8 +8,6 @@ set nobackup
 set autoindent
 
 " Set yank to clipboard
-set clipboard=unnamedplus
-
 if has('clipboard')
   if has('unnamedplus')  " When possible use + register for copy-paste
     set clipboard=unnamedplus
@@ -34,3 +32,17 @@ set pastetoggle=<F2>
 
 " Colorscheme
 colorscheme elflord
+
+" Line length warning
+set colorcolumn=81,101 " absolute columns to highlight "
+highlight ColorColumn ctermbg=darkblue
+
+" Tags
+set tags=tags;/
+
+" Errors
+nnoremap <leader>p :lprev<CR>
+nnoremap <leader>n :lnext<CR>
+
+" Mouse scroll on ssh
+set mouse=a
