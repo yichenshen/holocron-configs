@@ -29,8 +29,8 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-syntastic/syntastic'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Language Support
 Plug 'dag/vim-fish'
