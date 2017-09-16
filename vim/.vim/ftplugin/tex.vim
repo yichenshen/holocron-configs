@@ -13,6 +13,8 @@ let g:Tex_ViewRule_pdf = 'evince_dbus'
 let g:Tex_ViewRule_ps = 'evince_dbus'
 let g:Tex_ViewRule_dvi = 'evince_dbus'
 
+let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
+
 " Ultisnips
 UltiSnipsAddFiletypes texmath
 
