@@ -28,7 +28,7 @@ Plug 'Shougo/neocomplete.vim'
 " Status Display
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 " Snippets
 Plug 'SirVer/ultisnips'

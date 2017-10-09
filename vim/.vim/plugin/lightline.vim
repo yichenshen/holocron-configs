@@ -6,7 +6,9 @@ if $TERM != 'linux'
         \   'left': [ ['mode', 'paste'],
         \             ['fugitive', 'readonly', 'filename', 'modified'],
         \             ['ctrlpmark'] ],
-        \   'right': [ ['syntastic', 'lineinfo'], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+        \   'right': [ ['linter_warnings', 'linter_errors', 'lineinfo'],
+        \              ['percent'],
+        \              ['spell', 'fileformat', 'fileencoding', 'filetype' ] ]
         \ },
         \ 'component_function': {
         \   'modified': 'LightLineModified',
@@ -19,11 +21,13 @@ if $TERM != 'linux'
         \ },
         \ 'component_expand': {
         \   'fugitive': 'LightLineFugitive',
-        \   'syntastic': 'SyntasticStatuslineFlag'
+        \   'linter_warnings': 'LightlineLinterWarnings',
+        \   'linter_errors': 'LightlineLinterErrors',
         \ },
         \ 'component_type': {
         \   'fugitive': 'tabsel',
-        \   'syntastic': 'error'
+        \   'linter_warnings': 'warning',
+        \   'linter_errors': 'error',
         \ },
         \ 'separator': { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
@@ -118,6 +122,20 @@ let g:tagbar_status_func = 'TagbarStatusFunc'
 function! TagbarStatusFunc(current, sort, fname, ...) abort
   let g:lightline.fname = a:fname
   return lightline#statusline(0)
+endfunction
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:all_non_errors == 0 ? '' : printf('%d ', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:all_errors == 0 ? '' : printf('%d ', all_errors)
 endfunction
 
 let g:unite_force_overwrite_statusline = 0
