@@ -1,8 +1,9 @@
-vim-autocomplete:
+vim-autoformat:
   astyle: For C/C++ styling
   yapf[pip]: For Python styling
   flake8[pip]: Python linter
   ruby-beautify[gem]: For ruby formatting
+  swiftlint: For swift formatting
 
 ag.vim:
   silversearcher-ag: File searcher

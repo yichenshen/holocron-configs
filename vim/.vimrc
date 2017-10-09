@@ -33,12 +33,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Language Support
-Plug 'dag/vim-fish'
-Plug 'vim-ruby/vim-ruby'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
-" Plug 'vim-scripts/nginx.vim'
-" Plug 'keith/swift.vim'
-" Plug 'solarnz/thrift.vim'
 
 call plug#end()
