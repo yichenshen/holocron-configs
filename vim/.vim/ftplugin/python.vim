@@ -13,6 +13,6 @@ endif
 let g:neocomplete#force_omni_input_patterns.python =
   \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
-" syntastic
-let g:syntastic_python_checkers=['flake8', 'python']
+map <F5> :AsyncRun -raw python3 %<cr>
+map <F6> :AsyncRun python3 %<cr>
 
