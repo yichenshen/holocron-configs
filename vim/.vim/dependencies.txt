@@ -7,3 +7,6 @@ vim-autoformat:
 
 ag.vim:
   silversearcher-ag: File searcher
+
+fonts:
+  Patched nerd fonts
