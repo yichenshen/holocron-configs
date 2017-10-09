@@ -38,5 +38,6 @@ Plug 'honza/vim-snippets'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()

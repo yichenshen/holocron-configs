@@ -6,17 +6,12 @@ au BufNewFile,BufRead *.mako set ft=mako
 
 map <buffer> F :set foldmethod=indent<cr>
 
-inoremap <buffer> $r return
-inoremap <buffer> $i import
-inoremap <buffer> $p print
-inoremap <buffer> $f #--- <esc>a
-map <buffer> <leader>1 /class
-map <buffer> <leader>2 /def
-map <buffer> <leader>C ?class
-map <buffer> <leader>D ?def
-
-" neocomplete
-set omnifunc=pythoncomplete#Complete
+" neocomplete + jedi-vim
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python =
+  \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 " syntastic
 let g:syntastic_python_checkers=['flake8', 'python']
