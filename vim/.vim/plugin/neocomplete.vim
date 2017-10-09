@@ -33,11 +33,12 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><Up>  pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr><Down>  pumvisible() ? "\<C-n>" : "\<Down>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup with ESC
-inoremap <expr><ESC> pumvisible() ? neocomplete#smart_close_popup() : "\<ESC>"
 
 " Enable heavy omni completion. (Defined in ftplugins)
 if !exists('g:neocomplete#sources#omni#input_patterns')
