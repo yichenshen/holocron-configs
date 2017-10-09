@@ -15,19 +15,22 @@ Plug 'rking/ag.vim'
 Plug 'amix/open_file_under_cursor.vim'
 Plug 'derekwyatt/vim-fswitch'
 
-" Editor Functions
+" IDE functions
+Plug 'tpope/vim-fugitive'
+Plug 'Chiel92/vim-autoformat'
+Plug 'Shougo/neocomplete.vim'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'MattesGroeger/vim-bookmarks'
+
+" Editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Chiel92/vim-autoformat'
-Plug 'Shougo/neocomplete.vim'
-Plug 'skywind3000/asyncrun.vim'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
