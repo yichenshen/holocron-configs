@@ -1,12 +1,6 @@
 " Line numbers
 set number
 
-" Avoid generating backup files
-set nobackup
-
-" Auto indent while typing
-set autoindent
-
 " Set yank to clipboard
 if has('clipboard')
   if has('unnamedplus')  " When possible use + register for copy-paste
@@ -23,9 +17,6 @@ while c <= 'z'
   exec "imap \e".c." <A-".c.">"
   let c = nr2char(1+char2nr(c))
 endw
-
-" Lower delays for ESC key
-set timeout ttimeoutlen=50
 
 " Select paste mode
 set pastetoggle=<F2>

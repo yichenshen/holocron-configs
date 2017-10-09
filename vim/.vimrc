@@ -3,6 +3,9 @@
 
 call plug#begin('~/.vim/plugged')
 
+" Sensible Defaults
+Plug 'tpope/vim-sensible'
+
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
 Plug 'scrooloose/nerdtree'
