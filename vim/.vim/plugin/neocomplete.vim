@@ -36,8 +36,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" Close popup with ESC
+inoremap <expr><ESC> pumvisible() ? neocomplete#smart_close_popup() : "\<ESC>"
 
 " Enable heavy omni completion. (Defined in ftplugins)
 if !exists('g:neocomplete#sources#omni#input_patterns')
