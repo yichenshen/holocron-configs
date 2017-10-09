@@ -41,8 +41,8 @@ highlight ColorColumn ctermbg=darkblue
 set tags=tags;/
 
 " Errors
-nnoremap <leader>p :lprev<CR>
-nnoremap <leader>n :lnext<CR>
+nnoremap gL :lprev<CR>
+nnoremap gl :lnext<CR>
 
 " Mouse scroll on ssh
 set mouse=a
