@@ -18,6 +18,9 @@ imap <c-a> alert();<esc>hi
 inoremap <buffer> $r return
 inoremap <buffer> $f //--- PH<esc>FP2xi
 
+" neocomplete
+set omnifunc=javascriptcomplete#CompleteJS
+
 " ultisnips
 UltiSnipsAddFiletypes javascript-node
 

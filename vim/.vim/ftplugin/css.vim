@@ -1,3 +1,3 @@
-" Omnicomplete
+" neocomplete
 set omnifunc=csscomplete#CompleteCSS
 

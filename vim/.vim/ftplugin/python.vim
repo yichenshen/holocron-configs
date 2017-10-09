@@ -15,6 +15,9 @@ map <buffer> <leader>2 /def
 map <buffer> <leader>C ?class
 map <buffer> <leader>D ?def
 
+" neocomplete
+set omnifunc=pythoncomplete#Complete
+
 " syntastic
 let g:syntastic_python_checkers=['flake8', 'python']
 
