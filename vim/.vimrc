@@ -3,8 +3,9 @@
 
 call plug#begin('~/.vim/plugged')
 
-" Sensible Defaults
+" Generic Vim functions
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
 
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
@@ -12,7 +13,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
-Plug 'amix/open_file_under_cursor.vim'
 Plug 'derekwyatt/vim-fswitch'
 
 " IDE functions
@@ -25,12 +25,12 @@ Plug 'MattesGroeger/vim-bookmarks'
 " Editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'jiangmiao/auto-pairs'
+Plug 'svermeulen/vim-easyclip'
 
 " Status Display
 Plug 'itchyny/lightline.vim'

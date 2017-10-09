@@ -6,7 +6,7 @@ let g:formatters_cpp = ['my_custom_cpp']
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " FSwitch
-nmap <silent> gss :FSHere<cr>
+nmap <silent> gsf :FSHere<cr>
 nmap <silent> gsl :FSSplitRight<cr>
 nmap <silent> gsh :FSSplitLeft<cr>
 nmap <silent> gsk :FSSplitAbove<cr>
