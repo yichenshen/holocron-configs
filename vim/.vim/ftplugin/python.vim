@@ -16,5 +16,5 @@ map <buffer> <leader>C ?class
 map <buffer> <leader>D ?def
 
 " syntastic
-let g:syntastic_python_checkers=['python']
+let g:syntastic_python_checkers=['flake8', 'python']
 

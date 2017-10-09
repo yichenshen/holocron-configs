@@ -20,3 +20,6 @@ inoremap <buffer> $f //--- PH<esc>FP2xi
 
 " ultisnips
 UltiSnipsAddFiletypes javascript-node
+
+" ESLint
+let g:syntastic_javascript_checkers=['eslint']
