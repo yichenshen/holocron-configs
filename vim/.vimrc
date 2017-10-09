@@ -27,6 +27,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/neocomplete.vim'
+Plug 'skywind3000/asyncrun.vim'
 
 " Status Display
 Plug 'itchyny/lightline.vim'

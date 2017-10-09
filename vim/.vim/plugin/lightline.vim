@@ -5,7 +5,7 @@ if $TERM != 'linux'
         \ 'active': {
         \   'left': [ ['mode', 'paste'],
         \             ['fugitive', 'readonly', 'filename', 'modified'],
-        \             ['ctrlpmark'] ],
+        \             ['asyncrun', 'ctrlpmark'] ],
         \   'right': [ ['linter_warnings', 'linter_errors', 'lineinfo'],
         \              ['percent'],
         \              ['spell', 'fileformat', 'fileencoding', 'filetype' ] ]
@@ -17,17 +17,19 @@ if $TERM != 'linux'
         \   'fileformat': 'LightLineFileformat',
         \   'filetype': 'LightLineFiletype',
         \   'fileencoding': 'LightLineFileencoding',
-        \   'mode': 'LightLineMode'
+        \   'mode': 'LightLineMode',
         \ },
         \ 'component_expand': {
         \   'fugitive': 'LightLineFugitive',
         \   'linter_warnings': 'LightlineLinterWarnings',
         \   'linter_errors': 'LightlineLinterErrors',
+        \   'asyncrun': 'LightlineAsyncRunnerIndicator'
         \ },
         \ 'component_type': {
         \   'fugitive': 'tabsel',
         \   'linter_warnings': 'warning',
         \   'linter_errors': 'error',
+        \   'asyncrun': 'warning'
         \ },
         \ 'separator': { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
@@ -35,11 +37,11 @@ if $TERM != 'linux'
 endif
 
 function! LightLineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '' : &modifiable ? '' : ''
 endfunction
 
 function! LightLineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
 endfunction
 
 function! LightLineFilename()
@@ -56,7 +58,7 @@ endfunction
 function! LightLineFugitive()
   try
     if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-      let mark = ' '  " edit here for cool mark
+      let mark = ' '  " edit here for cool mark
       let branch = fugitive#head()
       return branch !=# '' ? mark.branch : ''
     endif
@@ -136,6 +138,10 @@ function! LightlineLinterErrors() abort
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:all_errors == 0 ? '' : printf('%d ', all_errors)
+endfunction
+
+function! LightlineAsyncRunnerIndicator() abort
+  return g:asyncrun_status == 'running' ? '' : ''
 endfunction
 
 let g:unite_force_overwrite_statusline = 0
