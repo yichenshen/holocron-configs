@@ -1,6 +1,7 @@
 let g:EasyClipShareYanks = 1
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
+let g:EasyClipUseGlobalPasteToggle = 0
 
 " Remap cut operation
 let g:EasyClipUseCutDefaults = 0
