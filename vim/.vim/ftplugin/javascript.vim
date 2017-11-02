@@ -17,3 +17,8 @@ UltiSnipsAddFiletypes javascript-node
 
 " ESLint
 let g:syntastic_javascript_checkers=['eslint']
+
+" Runners
+map <F5> :AsyncRun -raw node %<cr>
+map <F6> :AsyncRun node %<cr>
+
