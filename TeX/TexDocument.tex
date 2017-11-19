@@ -28,6 +28,7 @@
 % \counterwithout{subsection}{section}
 
 \usepackage[sf,bf]{titlesec}
+% \titleformat{\chapter}{\vspace{-5em}\huge\bfseries\sffamily}{\thechapter}{1em}{\vspace{-0.7em}}
 % \titleformat{\section}{\large\sffamily\bfseries}{Question \roman{section}}{1em}{}
 % \titleformat{\subsection}{\large\sffamily\bfseries}{\alph{subsection})}{1em}{}
 
@@ -39,6 +40,7 @@
 % Headers %
 %%%%%%%%%%%
 % \usepackage{lastpage} % Gives you \pageref{LastPage} for total pages
+% \usepackage[titletoc, toc, header]{appendix} % Appendix
 % \usepackage{fancyhdr}
 % \renewcommand{\headrulewidth}{0pt}
 % \pagestyle{fancy}
@@ -53,18 +55,22 @@
 %%%%%%%%%%
 % \usepackage{booktabs}
 % \setlength{\tabcolsep}{12pt}
+% \usepackage{array} % Extended formatting, like bold column
+% \usepackage{multirow} % Multi row/columsn
+% \usepackage{tabu} % Advanced column sizing
+% \usepackage{threeparttablex} % Table footnotes
 
 %%%%%%%%%%
 % Images %
 %%%%%%%%%%
 % Package included above in paper size
 % \graphicspath{ {images/} }
+% \usepackage{subcaption} % For subfigures
 
 %%%%%%%%%
 % Lists %
 %%%%%%%%%
 % \usepackage{enumitem} % Customize lists
-% \usepackage{subcaption} % For subfigures
 
 %%%%%%%%
 % Math %
@@ -136,9 +142,27 @@
 \author{Shen Yichen}
 
 \begin{document}
+
+% \begin{titlepage}
+%   \begin{center}
+%     \end{center}
+% \end{titlepage}
+%
+% \pagenumbering{roman}
+% \tableofcontents
+
+% \newpage
+% \pagenumbering{arabic}
+
 \begin{singlespace}
     \maketitle
 \end{singlespace}
 
-%\printbibliography{}
+% \phantomsection{}
+% \addcontentsline{toc}{chapter}{Bibliography}
+% \printbibliography{}
+
+% \phantomsection{}
+% \appendix
+
 \end{document}
