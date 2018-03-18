@@ -4,11 +4,11 @@ let g:EasyClipUseSubstituteDefaults = 1
 let g:EasyClipUseGlobalPasteToggle = 0
 
 " Remap cut operation
+let g:EasyClipEnableBlackHoleRedirect = 0
 let g:EasyClipUseCutDefaults = 0
-nmap dc <Plug>MoveMotionPlug
-xmap dc <Plug>MoveMotionXPlug
-nmap dC <Plug>MoveMotionEndOfLinePlug
-nmap dcc <Plug>MoveMotionLinePlug
+nmap dc "_d
+xmap dc "_d
+nmap dcc "_dd
 
 " Remap Yank cycle
 let g:EasyClipUsePasteToggleDefaults = 0
