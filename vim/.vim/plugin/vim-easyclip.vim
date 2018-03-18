@@ -7,7 +7,7 @@ let g:EasyClipUseGlobalPasteToggle = 0
 let g:EasyClipEnableBlackHoleRedirect = 0
 let g:EasyClipUseCutDefaults = 0
 nmap dc "_d
-xmap dc "_d
+xmap x "_d
 nmap dcc "_dd
 
 " Remap Yank cycle
