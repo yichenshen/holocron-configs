@@ -14,6 +14,10 @@ let g:Tex_ViewRule_ps = 'evince_dbus'
 let g:Tex_ViewRule_dvi = 'evince_dbus'
 
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
+let g:Tex_IgnoredWarnings =
+      \'deprecated'."\n".
+      \"'labeldate' option used to determine whether to"."\n".
+      \'Deprecated'."\n"
 
 " Ultisnips
 UltiSnipsAddFiletypes texmath
