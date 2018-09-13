@@ -25,7 +25,7 @@ set pastetoggle=<F2>
 colorscheme elflord
 
 " Line length warning
-set colorcolumn=81,101 " absolute columns to highlight "
+set colorcolumn=81,121 " absolute columns to highlight "
 highlight ColorColumn ctermbg=darkblue
 
 " Tags
