@@ -1,6 +1,6 @@
 if $TERM != 'linux'
   let g:lightline = {
-        \ 'colorscheme': 'wombat',
+        \ 'colorscheme': 'one',
         \ 'mode_map': { 'c': 'NORMAL' },
         \ 'active': {
         \   'left': [ ['mode', 'paste'],

@@ -47,4 +47,7 @@ Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
 Plug 'davidhalter/jedi-vim'
 
+" Themes
+Plug 'rakr/vim-one'
+
 call plug#end()
