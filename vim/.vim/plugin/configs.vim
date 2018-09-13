@@ -21,12 +21,19 @@ endw
 " Select paste mode
 set pastetoggle=<F2>
 
-" Colorscheme
+" Colors
+set t_Co=256
+set termguicolors
 colorscheme elflord
+if &term =~# '^screen'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
 " Line length warning
 set colorcolumn=81,121 " absolute columns to highlight "
 highlight ColorColumn ctermbg=darkblue
+highlight ColorColumn guibg=#2196F3
 
 " Tags
 set tags=tags;/
