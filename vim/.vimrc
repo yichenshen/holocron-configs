@@ -18,9 +18,15 @@ Plug 'derekwyatt/vim-fswitch'
 " IDE functions
 Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
-Plug 'Shougo/neocomplete.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Editing
 Plug 'tpope/vim-surround'
