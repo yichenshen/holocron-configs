@@ -20,6 +20,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
+
+" Deoplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -27,6 +29,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'zefei/deoplete-hack'
 
 " Editing
 Plug 'tpope/vim-surround'
@@ -49,6 +52,7 @@ Plug 'honza/vim-snippets'
 
 " Language Support
 Plug 'sheerun/vim-polyglot'
+Plug 'hhvm/vim-hack'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
 Plug 'davidhalter/jedi-vim'
