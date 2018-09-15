@@ -52,7 +52,7 @@
     sp = stash pop
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = input
   excludesfile = ~/.gitignore_global
 [credential]

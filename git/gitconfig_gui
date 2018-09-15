@@ -55,7 +55,7 @@
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   try = merge --no-commit --no-ff
 [core]
-  editor = vim
+  editor = nvim
   autocrlf = input
   excludesfile = ~/.gitignore_global
 [credential]
