@@ -7,8 +7,8 @@ vim-autoformat:
   ruby-beautify[gem]: For ruby formatting
   swiftlint: For swift formatting
 
-ag.vim:
-  silversearcher-ag: File searcher
+ack.vim:
+  ack: File searcher
 
 fonts:
   Patched nerd fonts
