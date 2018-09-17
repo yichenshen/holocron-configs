@@ -22,14 +22,10 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 
 " Deoplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'zefei/deoplete-hack'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Deoplete languages
+Plug 'yichenshen/deoplete-hack'
 
 " Editing
 Plug 'tpope/vim-surround'

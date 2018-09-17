@@ -1,3 +1,5 @@
+Neovim: Plugins require it
+
 vim-autoformat:
   astyle: For C/C++ styling
   yapf[pip]: For Python styling
