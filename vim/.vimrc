@@ -25,7 +25,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Deoplete languages
-Plug 'zefei/deoplete-hack'
 Plug 'Shougo/neco-vim'
 
 " Editing
