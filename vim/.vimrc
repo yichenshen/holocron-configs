@@ -21,11 +21,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'w0rp/ale'
+Plug 'ervandew/supertab'
 
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Deoplete languages
 Plug 'Shougo/neco-vim'
 
 " Editing
@@ -41,7 +41,6 @@ Plug 'svermeulen/vim-easyclip'
 " Status Display
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
-Plug 'w0rp/ale'
 
 " Snippets
 Plug 'SirVer/ultisnips'
