@@ -70,5 +70,6 @@ endfunction
 map <leader>lc :call ToggleList("Location List", 'l')<CR>
 map <leader>cc :call ToggleList("Quickfix List", 'c')<CR>
 
+" Highlight tabs
 syn match tab display "\t"
 hi link tab Error
