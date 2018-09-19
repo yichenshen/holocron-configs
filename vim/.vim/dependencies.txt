@@ -5,3 +5,6 @@ ack.vim:
 
 fonts:
   Patched nerd fonts
+
+deoplete.vim:
+  flow: Javascript completer
