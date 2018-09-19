@@ -13,6 +13,8 @@ augroup END
 nnoremap <silent> K :ALEHover<CR>
 " Type `gd` to go to definition
 nnoremap <silent> gd :ALEGoToDefinition<CR>
+" gk shows more details about an error
+nnoremap <silent> gk :ALEDetail<CR>
 " Find references for a function/variable
 map <leader>u :ALEFindReferences<CR>
 " Meta-click (command-click) to go to definition
@@ -22,4 +24,3 @@ nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
 let g:ale_fix_on_save = 1
 noremap <leader>ff :ALEFix<CR>
-
