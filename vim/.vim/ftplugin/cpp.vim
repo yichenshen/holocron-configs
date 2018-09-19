@@ -3,7 +3,7 @@ let g:formatdef_my_custom_cpp = '"astyle --mode=c --style=google -W -pcHs".&shif
 let g:formatters_cpp = ['my_custom_cpp']
 
 " deoplete
-call deoplete#custom#var('omni', 'input_patterns', { 'cpp': '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::' })
+call deoplete#custom#var('omni', 'input_patterns', { 'cpp': ['[^. *\t]\.\w*','[^. *\t]\::\w*','[^. *\t]\->\w*','#include\s*[<"][^>"]*'] })
 
 " FSwitch
 nmap <silent> gsf :FSHere<cr>
