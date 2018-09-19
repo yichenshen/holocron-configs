@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 " Generic Vim functions
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/restore_view.vim'
 
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
