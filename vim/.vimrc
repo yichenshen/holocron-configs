@@ -27,6 +27,7 @@ Plug 'ervandew/supertab'
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-vim'
+Plug 'zchee/deoplete-jedi'
 
 " Editing
 Plug 'tpope/vim-surround'
