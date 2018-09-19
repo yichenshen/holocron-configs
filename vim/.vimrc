@@ -25,6 +25,7 @@ Plug 'ervandew/supertab'
 
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'zchee/deoplete-jedi'
 Plug 'wokalski/autocomplete-flow'
