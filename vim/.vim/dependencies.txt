@@ -3,6 +3,7 @@ Neovim: Plugins require it
 ale.vim:
   black: python code formatter
   isort: sorts python imports
+  flake8: PEP8 linter
 
 ack.vim:
   ack: File searcher

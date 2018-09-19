@@ -17,5 +17,8 @@ let g:jedi#goto_command = "gd"
 let g:jedi#goto_assignments_command = "ga"
 let g:jedi#usages_command = "<leader>u"
 
+" Linters
+let b:ale_linters = ['flake8']
+
 " Autoformat
 let g:ale_fixers.python = ['isort', 'black']
