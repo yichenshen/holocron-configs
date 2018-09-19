@@ -18,3 +18,8 @@ map <leader>u :ALEFindReferences<CR>
 " Meta-click (command-click) to go to definition
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 
+" Autoformat
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
+let g:ale_fix_on_save = 1
+noremap <leader>ff :ALEFix<CR>
+
