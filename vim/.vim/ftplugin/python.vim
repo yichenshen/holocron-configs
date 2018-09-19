@@ -16,3 +16,6 @@ map <F6> :AsyncRun python3 %<cr>
 let g:jedi#goto_command = "gd"
 let g:jedi#goto_assignments_command = "ga"
 let g:jedi#usages_command = "<leader>u"
+
+" Autoformat
+let g:ale_fixers.python = ['isort', 'black']

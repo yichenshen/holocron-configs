@@ -1,5 +1,9 @@
 Neovim: Plugins require it
 
+ale.vim:
+  black: python code formatter
+  isort: sorts python imports
+
 ack.vim:
   ack: File searcher
 
