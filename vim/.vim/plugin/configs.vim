@@ -73,3 +73,7 @@ map <leader>cc :call ToggleList("Quickfix List", 'c')<CR>
 " Highlight tabs
 syn match tab display "\t"
 hi link tab Error
+
+" Set automatic folding
+set foldmethod=syntax
+set foldlevelstart=5
