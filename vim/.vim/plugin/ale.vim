@@ -20,6 +20,9 @@ map <leader>u :ALEFindReferences<CR>
 " Meta-click (command-click) to go to definition
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 
+" Message format
+let g:ale_echo_msg_format = "[%linter%]%[ code]% %s"
+
 " Autoformat
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
 let g:ale_fix_on_save = 1
