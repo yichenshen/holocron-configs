@@ -28,6 +28,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'zchee/deoplete-jedi'
+Plug 'ponko2/deoplete-fish'
 
 " Editing
 Plug 'tpope/vim-surround'
