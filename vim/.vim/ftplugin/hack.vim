@@ -1,6 +1,7 @@
 " Use ALE completion instead of Deoplete
 let g:deoplete#enable_at_startup = 0
 let g:ale_completion_enabled = 1
+call deoplete#disable()
 call ale#completion#Enable()
 
 " ALE message format
