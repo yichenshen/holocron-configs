@@ -4,6 +4,7 @@ ale.vim:
   black: python code formatter
   isort: sorts python imports
   flake8: PEP8 linter
+  prettier: JS formatter
 
 ack.vim:
   ack: File searcher
