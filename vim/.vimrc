@@ -55,6 +55,7 @@ Plug 'hhvm/vim-hack'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
 Plug 'davidhalter/jedi-vim'
+Plug 'jparise/vim-graphql'
 
 " Themes
 Plug 'rakr/vim-one'
