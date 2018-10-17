@@ -57,5 +57,7 @@ Plug 'davidhalter/jedi-vim'
 
 " Themes
 Plug 'rakr/vim-one'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
