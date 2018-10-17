@@ -18,6 +18,7 @@ Plug 'derekwyatt/vim-fswitch'
 
 " IDE functions
 Plug 'tpope/vim-fugitive'
+Plug 'ludovicchabant/vim-lawrencium'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'w0rp/ale'
