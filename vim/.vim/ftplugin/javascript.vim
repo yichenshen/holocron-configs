@@ -22,3 +22,6 @@ map <F6> :AsyncRun node %<cr>
 " Autocomplete
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers["javascript.jsx"] = ['prettier']
+
+" vim-javascript options
+let g:javascript_plugin_flow = 1
