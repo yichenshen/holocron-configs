@@ -8,6 +8,9 @@ let g:deoplete#auto_completion_start_length = 1
 " Keyword for normal files
 call deoplete#custom#option('keyword_patterns', { 'default': '\h\w*' })
 
+" Put snippets above buffers, but below most sources
+call deoplete#custom#source('ultisnips', 'rank', 400)
+
 " Plugin key-mappings.
 inoremap <expr><C-g>     deoplete#undo_completion()
 inoremap <expr><C-l>     deoplete#complete_common_string()
