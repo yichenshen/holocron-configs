@@ -16,9 +16,8 @@ setl fen
 UltiSnipsAddFiletypes javascript-node
 
 " Runners
-map <F5> :AsyncRun -raw node %<cr>
-map <F6> :AsyncRun node %<cr>
-
+map <F9> :AsyncRun -raw node %<cr>
+map <F10> :AsyncRun node %<cr>
 " Autocomplete
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers["javascript.jsx"] = ['prettier']
