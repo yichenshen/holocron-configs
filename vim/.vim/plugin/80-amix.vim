@@ -350,7 +350,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>e :e! ~/.vim/plugin/configs.vim<cr>
+map <leader>e :e! ~/.vim/plugin/99-configs.vim<cr>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 
