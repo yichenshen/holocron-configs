@@ -36,9 +36,6 @@ nnoremap ]l :lnext<CR>
 nnoremap [c :cprev<CR>
 nnoremap ]c :cnext<CR>
 
-" Mouse scroll on ssh
-set mouse=a
-
 " Toggle lists
 function! GetBufferList()
   redir =>buflist
