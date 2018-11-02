@@ -74,3 +74,7 @@ hi link tab Error
 " Set automatic folding
 set foldmethod=syntax
 set foldlevelstart=5
+
+" Show file and line position
+map <leader>pf :echo @%<CR>
+map <leader>pl :echo @%.':'.line('.')<CR>
