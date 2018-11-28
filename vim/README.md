@@ -21,6 +21,19 @@ For most of these plugin dependencies, vim should run fine without them if you d
  - deoplete.vim
   - flow: Javascript completer
 
+## Neovim setup
+
+After installing neovim, make sure it has Python/Ruby/Node support:
+
+```
+pip3 install --user neovim
+pip2 install --user neovim
+gem install -N neovim
+sudo npm install -g neovim
+```
+
+> Try not to install the system packages for these since they tend to be out of date.
+
 ## Setup
 
 > WARNING: install.sh overwrites existing vimrc files.
