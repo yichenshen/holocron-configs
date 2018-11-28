@@ -21,6 +21,6 @@ PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH
 
 # Force source .bashrc if on SSH
-if { [ $SSH_TTY ] || [ $SSH_CLIENT ]; } && [ -f ~/.bashrc ]; then
+if [ $SSH_TTY ] && [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
