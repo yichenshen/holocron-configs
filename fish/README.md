@@ -4,7 +4,6 @@
 
  - [fisher](https://github.com/jorgebucaran/fisher)
 ```bash
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 ```
  - neofetch
  - neovim
@@ -12,6 +11,8 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 ## Setup
 
 Run `install.sh` to symlink the various files to `~/.config/fish/`.
+
+`install.sh` will also install fisher to manage fish plugins, as well as install the specified ones in `fishfile`.
 
 > WARNING: The script will overwrite any existing config files with the same name.
 
