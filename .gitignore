@@ -2,6 +2,8 @@
 vim/.vim/plugged/
 # vim-restore-view cache
 vim/.vim/view/
+# vim-plug is installed separately
+vim/.vim/autoload/plug.vim
 
 # fish user specific files
 fish/fishd.*

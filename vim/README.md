@@ -32,3 +32,8 @@ Run `install.sh`. It does the following:
   - `.vim` contains custom configs for languages and the plugins
  - Symlinks `init.vim` to `~/.config/nvim/init.vim`
   - This makes neovim make use of traditional vim's config structure
+ - Installs vim-plug
+
+## Install plugins
+
+Start neovim and run `:PlugInstall` to install the plugins.
