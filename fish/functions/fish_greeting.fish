@@ -1,4 +1,4 @@
 function fish_greeting
-  screenfetch
+  neofetch
 end
 
