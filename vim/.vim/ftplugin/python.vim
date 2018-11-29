@@ -22,3 +22,4 @@ let b:ale_linters = ['flake8']
 
 " Autoformat
 let g:ale_fixers.python = ['isort', 'black']
+let g:ale_python_black_options = '-l 79'
