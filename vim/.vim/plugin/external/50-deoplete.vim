@@ -18,3 +18,10 @@ inoremap <expr><C-l>     deoplete#complete_common_string()
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+
+" <C-Space> forces autocomplete
+inoremap <expr><C-Space> deoplete#manual_complete()
+
+" Map tab to iterate through candidates
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
