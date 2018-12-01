@@ -24,3 +24,7 @@ Font configurations here if for:
 Run `clone-fonts.sh`. This will clone all [Google fonts](https://github.com/google/fonts), as well as download Noto Sans CJK and Noto Serif CJK (within two OTC files) into `~/fonts`.
 
 Fonts will then be availible locally. You can update google fonts by going to the directory and execute `git clone`, and then `fc-cache -fv`. Log out and log back in afterwards.
+
+## Nerd fonts
+
+Copy `Roboto_Medium_Nerd_Font` to `~/.fonts`: `cp -r Roboto_Medium_Nerd_Font ~/.fonts`
