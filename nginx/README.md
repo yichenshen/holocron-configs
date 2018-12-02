@@ -32,6 +32,6 @@ sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /etc/letsenc
 Turn on the systemd timer to renew certs automatically.
 
 ```sh
-sudo systemctl enable certbot_renewal.timer
-sudo systemctl start certbot_renewal.timer
+sudo systemctl enable certbot-renew.timer
+sudo systemctl start certbot-renew.timer
 ```
