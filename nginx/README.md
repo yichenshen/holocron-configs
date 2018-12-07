@@ -2,6 +2,25 @@
 
 These files serves as template files for various NGINX web/reverse proxy applications. Refer to the individual files for documentation
 
+## Configs
+
+Configurations are available for:
+
+ - Plex
+
+### Directory sturcture
+
+ - `archive`
+  - These are archived `.conf` files that are no longer used. They're kept purely for reference.
+
+### Documentation
+
+Config specific documentation are available as comments within the `.conf` files themselves.
+
+## Installation
+
+It is recommended that you hardlink the `.conf` files to the NGINX system folders instead of doing a softlink. This difference is such that system files will not depends on user files. I.e. If I clone this repo into a user directory, when I remove the user, the NGINX configurations will not suddenly become dead links.
+
 ## HTTPS
 
 Below are instructions for setting up HTTPS using [letsencrypt](https://letsencrypt.org) and [certbot](https://certbot.eff.org/).
