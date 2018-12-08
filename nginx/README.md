@@ -14,9 +14,9 @@ Configurations are available for:
   - These are archived `.conf` files that are no longer used. They're kept purely for reference.
  - `default.d`
   - These default configurations to be included in every server block
-  - To be
  - `conf.d`
-  -
+  - Server blocks are stored here
+  - This folder can also be used to store global configs
 
 ### Documentation
 
@@ -36,6 +36,15 @@ The default configuration assumes that SSL is setup accordingly for Cloudflare, 
 Then restart NGINX: `sudo systemctl restart nginx`.
 
 > You can also symlink the configurations for auto updates, but keep in mind that SELinux will need to be configured for permission issues. Also keep in mind that NGINX has to be restarted for changes to take effect.
+
+## Auth
+
+Some server blocks may make use of basic authentication. You'll need a password file to be able to use them. Create one with `openssl`:
+
+```sh
+sudo sh -c "echo -n '<user>:' >> /etc/nginx/.htpasswd"
+sudo sh -c "openssl passwd -apr1 >> /etc/nginx/.htpasswd"
+```
 
 ## HTTPS
 
