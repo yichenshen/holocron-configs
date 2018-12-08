@@ -12,6 +12,11 @@ Configurations are available for:
 
  - `archive`
   - These are archived `.conf` files that are no longer used. They're kept purely for reference.
+ - `default.d`
+  - These default configurations to be included in every server block
+  - To be
+ - `conf.d`
+  -
 
 ### Documentation
 
@@ -19,7 +24,18 @@ Config specific documentation are available as comments within the `.conf` files
 
 ## Installation
 
-It is recommended that you hardlink the `.conf` files to the NGINX system folders instead of doing a softlink. This difference is such that system files will not depends on user files. I.e. If I clone this repo into a user directory, when I remove the user, the NGINX configurations will not suddenly become dead links.
+Copy the the `.conf` files to the respective NGINX system folders.
+
+```sh
+sudo ln -s default.d/* /etc/nginx/default.d/
+sudo ln -s conf.d/* /etc/nginx/conf.d/
+```
+
+The default configuration assumes that SSL is setup accordingly for Cloudflare, refere below.
+
+Then restart NGINX: `sudo systemctl restart nginx`.
+
+> You can also symlink the configurations for auto updates, but keep in mind that SELinux will need to be configured for permission issues. Also keep in mind that NGINX has to be restarted for changes to take effect.
 
 ## HTTPS
 
@@ -54,3 +70,9 @@ Turn on the systemd timer to renew certs automatically.
 sudo systemctl enable certbot-renew.timer
 sudo systemctl start certbot-renew.timer
 ```
+
+### Cloudflare client cert
+
+Set up cloudflare client verification by downloading the Cloudflare client cert and placing it in `/etc/nginx/certs/`.
+
+Refer to `default.d/ssh.conf` for more details.
