@@ -1,0 +1,56 @@
+" Hack built-ins
+syn keyword phpType vec dict keyset contained
+syn keyword phpType varray darray contained
+syn keyword phpType Awaitable contained
+syn keyword phpClasses Vector Map Set contained
+
+" Hack keywords
+syn keyword phpException catch throw try finally contained
+syn keyword phpStorageClass final global static contained
+syn keyword phpConstants private protected public abstract contained
+syn keyword phpKeyword const contained
+
+" Hack functions
+syn keyword phpFunctions nullthrows invariant contained
+syn keyword phpFunctions hphpd_break contained
+
+" Hack libraries
+syn keyword phpConstants C Vec Str Dict Regex Keyset Tuple contained
+syn keyword phpConstants PseudoRandom SecureRandom Math contained
+
+" Hack operators
+syn keyword phpOperator is contained
+
+" For hack generics contraints
+syn clear hackGenericType
+
+syn match hackTypeConstraint +=+ contained
+syn keyword hackTypeConstraint super contained
+syn keyword hackTypeConstraint as contained
+
+syn region hackGenericSpec start="<" end=">" contained
+      \ contains=phpKeyword,phpType,phpClasses,phpInterfaces,hackTypeConstraint,hackGenericSpec
+syn region hackImplementsGeneric start="<" end=">" contained
+      \ contains=phpKeyword,phpType,phpClasses,phpInterfaces,hackTypeConstraint,hackImplementsGeneric
+      \ nextgroup=phpClassDelimiter skipwhite skipempty
+
+syn match phpFunction /\h\w*/ contained nextgroup=hackGenericSpec
+syn match phpClass /\h\w*/ contained nextgroup=hackGenericSpec
+syn match phpClassExtends /\h\w*/ contained nextgroup=hackGenericSpec
+syn match phpClassImplements contained contains=phpClassNamespaceSeparator
+      \ nextgroup=phpClassDelimiter,hackImplementsGeneric skipwhite skipempty /\(\\\|\h\w*\)*\h\w*/
+syn match hackGenericAnnotation +\s*\w\+<.*>+hs=s+2 contained
+      \ contains=phpType,phpConstants,phpClasses,phpInterfaces,hackGenericSpec
+
+syn cluster phpClConst add=hackGenericAnnotation
+
+hi def link hackGenericSpec Type
+hi def link hackImplementsGeneric Type
+hi def link hackTypeConstraint Operator" Hack annotations
+
+" Hack annotations
+syn region hackAnnotation contained
+      \ matchgroup=phpOperator start=+<<+ end=+>>+
+      \ contains=phpStringSingle,phpStringDouble,phpParent
+syn cluster phpClFunction add=hackAnnotation
+hi def link hackAnnotation Special
