@@ -33,12 +33,17 @@ syn region hackGenericSpec start="<" end=">" contained
 syn region hackImplementsGeneric start="<" end=">" contained
       \ contains=phpKeyword,phpType,phpClasses,phpInterfaces,hackTypeConstraint,hackImplementsGeneric
       \ nextgroup=phpClassDelimiter skipwhite skipempty
+syn region hackUseClassGeneric start="<" end=">" contained
+      \ contains=phpKeyword,phpType,phpClasses,phpInterfaces,hackTypeConstraint,hackUseClassGeneric
+      \ nextgroup=phpUseAlias skipwhite skipempty
 
 syn match phpFunction /\h\w*/ contained nextgroup=hackGenericSpec
 syn match phpClass /\h\w*/ contained nextgroup=hackGenericSpec
 syn match phpClassExtends /\h\w*/ contained nextgroup=hackGenericSpec
 syn match phpClassImplements contained contains=phpClassNamespaceSeparator
       \ nextgroup=phpClassDelimiter,hackImplementsGeneric skipwhite skipempty /\(\\\|\h\w*\)*\h\w*/
+syn match phpUseClass /\(function\_s\+\)\@!\(\\\|\h\w*\)*\h\w*/ contained contains=phpUseNamespaceSeparator
+      \ nextgroup=hackUseClassGeneric,phpUseAlias skipwhite skipempty
 syn match hackGenericAnnotation +\s*\w\+<.*>+hs=s+2 contained
       \ contains=phpType,phpConstants,phpClasses,phpInterfaces,hackGenericSpec
 
@@ -46,7 +51,8 @@ syn cluster phpClConst add=hackGenericAnnotation
 
 hi def link hackGenericSpec Type
 hi def link hackImplementsGeneric Type
-hi def link hackTypeConstraint Operator" Hack annotations
+hi def link hackUseClassGeneric Type
+hi def link hackTypeConstraint Operator
 
 " Hack annotations
 syn region hackAnnotation contained
