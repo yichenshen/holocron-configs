@@ -1,0 +1,52 @@
+[Unit]
+Description=A service for starting a Docker container for Transmission with OpenVPN
+After=docker.service
+After=network-online.target
+Requires=docker.service
+Wants=nginx.service
+
+[Service]
+User=transmission
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker stop transmission-openvpn
+ExecStartPre=/usr/bin/docker pull haugene/transmission-openvpn
+ExecStart=/usr/bin/docker run \
+            --name=transmission-openvpn \
+            --rm \
+            --cap-add=NET_ADMIN \
+            --device=/dev/net/tun \
+            --log-driver json-file \
+            --log-opt max-size=10m \
+            -p 9091:9091 \
+            --dns 8.8.8.8 \
+            --dns 8.8.4.4 \
+            --sysctl net.ipv6.conf.all.disable_ipv6=1 \
+            -v /var/transmission:/data:Z \
+            -v /etc/localtime:/etc/localtime:ro,Z \
+            -e "OPENVPN_PROVIDER=<VPN PROVIDER>" \
+            -e "OPENVPN_CONFIG=<VPN SERVER>" \
+            -e "OPENVPN_USERNAME=<VPN USERNAME>" \
+            -e "OPENVPN_PASSWORD=<VPN PASSWORD>" \
+            -e "OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --mssfix 1452 --mute-replay-warnings" \
+            -e "WEBPROXY_ENABLED=false" \
+            -e "LOCAL_NETWORK=192.168.1.0/24" \
+            -e "TRANSMISSION_WEB_UI=combustion" \
+            -e "TRANSMISSION_SPEED_LIMIT_UP=1024" \
+            -e "TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true" \
+            -e "TRANSMISSION_ALT_SPEED_UP=256" \
+            -e "TRANSMISSION_ALT_SPEED_DOWN=1024" \
+            -e "TRANSMISSION_LPD_ENABLED=true" \
+            -e "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true" \
+            -e "TRANSMISSION_RPC_USERNAME=<USER>" \
+            -e "TRANSMISSION_RPC_PASSWORD=<PASSWORD>" \
+            -e "TRANSMISSION_RATIO_LIMIT_ENABLED=true" \
+            -e "PUID=980" \
+            -e "PGID=980" \
+            haugene/transmission-openvpn
+ExecStop=/usr/bin/docker stop transmission-openvpn
+RestartSec=5
+Restart=on-failure
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
