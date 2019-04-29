@@ -44,7 +44,7 @@ syn match phpClassImplements contained contains=phpClassNamespaceSeparator
       \ nextgroup=phpClassDelimiter,hackImplementsGeneric skipwhite skipempty /\(\\\|\h\w*\)*\h\w*/
 syn match phpUseClass /\(function\_s\+\)\@!\(\\\|\h\w*\)*\h\w*/ contained contains=phpUseNamespaceSeparator
       \ nextgroup=hackUseClassGeneric,phpUseAlias skipwhite skipempty
-syn match hackGenericAnnotation +\s*\w\+<.*>+hs=s+2 contained
+syn match hackGenericAnnotation +@*\s*\w\+<.*>+hs=s+2 contained
       \ contains=phpType,phpConstants,phpClasses,phpInterfaces,hackGenericSpec
 
 syn cluster phpClConst add=hackGenericAnnotation
