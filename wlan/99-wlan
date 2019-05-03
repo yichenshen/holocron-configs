@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$1" = "enp0s20u1u4" ]; then
+    case "$2" in
+        up)
+            rfkill block wifi
+            ;;
+        down)
+            rfkill unblock wifi
+           ;;
+   esac
+fi
