@@ -4,3 +4,4 @@ vim/.vim/plugged/
 vim/.vim/view/
 # vim-plug is installed separately
 vim/.vim/autoload/plug.vim
+vim/.vim/autoload/plug.vim.old
