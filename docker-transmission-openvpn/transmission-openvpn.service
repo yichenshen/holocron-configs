@@ -40,6 +40,7 @@ ExecStart=/usr/bin/docker run \
             -e "TRANSMISSION_RPC_USERNAME=<USER>" \
             -e "TRANSMISSION_RPC_PASSWORD=<PASSWORD>" \
             -e "TRANSMISSION_RATIO_LIMIT_ENABLED=true" \
+            -e "TRANSMISSION_RATIO_LIMIT=1.5" \
             -e "PUID=980" \
             -e "PGID=980" \
             haugene/transmission-openvpn
