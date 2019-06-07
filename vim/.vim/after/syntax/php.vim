@@ -1,12 +1,13 @@
 " Hack built-ins
-syn keyword phpType vec dict keyset contained
-syn keyword phpType varray darray contained
-syn keyword phpType Awaitable contained
-syn keyword phpClasses Vector Map Set contained
+syn keyword phpType vec dict keyset contained nextgroup=hackGenericSpec
+syn keyword phpType varray darray contained nextgroup=hackGenericSpec
+syn keyword phpType Awaitable contained nextgroup=hackGenericSpec
+syn keyword phpClasses Vector Map Set contained nextgroup=hackGenericSpec
 
 " Hack keywords
 syn keyword phpException catch throw try finally contained
-syn keyword phpStorageClass final global static contained
+syn keyword phpStorageClass global static contained
+syn keyword phpIdentifier final contained
 syn keyword phpConstants private protected public abstract contained
 syn keyword phpKeyword const contained
 
@@ -20,6 +21,8 @@ syn keyword phpConstants PseudoRandom SecureRandom Math contained
 
 " Hack operators
 syn keyword phpOperator is contained
+syn keyword phpOperator << contained
+syn keyword phpOperator >> contained
 
 " For hack generics contraints
 syn clear hackGenericType
@@ -56,7 +59,7 @@ hi def link hackTypeConstraint Operator
 
 " Hack annotations
 syn region hackAnnotation contained
-      \ matchgroup=phpOperator start=+<<+ end=+>>+
+      \ matchgroup=phpOperator start=+^\s*<<+ end=+>>\s*$+
       \ contains=phpStringSingle,phpStringDouble,phpParent
 syn cluster phpClFunction add=hackAnnotation
 hi def link hackAnnotation Special
