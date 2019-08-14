@@ -29,7 +29,6 @@ Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'zchee/deoplete-jedi'
 Plug 'ponko2/deoplete-fish'
-Plug 'wokalski/autocomplete-flow'
 
 " Editing
 Plug 'tpope/vim-surround'
