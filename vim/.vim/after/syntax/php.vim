@@ -61,5 +61,10 @@ hi def link hackTypeConstraint Operator
 syn region hackAnnotation contained
       \ matchgroup=phpOperator start=+^\s*<<+ end=+>>\s*$+
       \ contains=phpStringSingle,phpStringDouble,phpParent
+syn region hackLongString contained
+      \ matchgroup=hackEOF start=+<<<EOF+ end=+EOF+
 syn cluster phpClFunction add=hackAnnotation
+syn cluster phpClConst add=hackLongString
 hi def link hackAnnotation Special
+hi def link hackLongString String
+hi def link hackEOF cSpecial
