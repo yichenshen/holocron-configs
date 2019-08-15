@@ -31,6 +31,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'ponko2/deoplete-fish'
 
 " Editing
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
