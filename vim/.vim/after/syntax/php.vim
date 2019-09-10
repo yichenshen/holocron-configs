@@ -59,7 +59,7 @@ hi def link hackTypeConstraint Operator
 
 " Hack annotations
 syn region hackAnnotation contained
-      \ matchgroup=phpOperator start=+^\s*<<+ end=+>>\s*$+
+      \ matchgroup=phpOperator start=+^\s*<<+ end=+>>\s*+
       \ contains=phpStringSingle,phpStringDouble,phpParent
 syn region hackLongString contained
       \ matchgroup=hackEOF start=+<<<EOF+ end=+EOF+
