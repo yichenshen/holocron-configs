@@ -18,6 +18,10 @@ UltiSnipsAddFiletypes javascript-node
 " Runners
 map <F9> :AsyncRun -raw node %<cr>
 map <F10> :AsyncRun node %<cr>
+
+" Linters
+let g:ale_linters.javascript = ['eslint', 'flow-language-server']
+
 " Autocomplete
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers["javascript.jsx"] = ['prettier']

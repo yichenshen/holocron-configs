@@ -2,7 +2,7 @@
 let g:ale_echo_msg_format = '[%linter%]% [code]% %s'
 
 " Enable HHAST for linting
-let g:ale_linters = { 'hack': ['hack', 'hhast']  }
+let g:ale_linters.hack = ['hack', 'hhast']
 
 " show type on hover in a floating bubble
 let g:ale_set_balloons = 1
