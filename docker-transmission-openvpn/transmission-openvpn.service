@@ -24,10 +24,11 @@ ExecStart=/usr/bin/docker run \
             -v /var/transmission:/data:Z \
             -v /etc/localtime:/etc/localtime:ro,Z \
             -e "OPENVPN_PROVIDER=<VPN PROVIDER>" \
-            -e "OPENVPN_CONFIG=<VPN SERVER>" \
             -e "OPENVPN_USERNAME=<VPN USERNAME>" \
             -e "OPENVPN_PASSWORD=<VPN PASSWORD>" \
             -e "OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --mssfix 1452 --mute-replay-warnings" \
+            -e "NORDVPN_COUNTRY=US" \
+            -e "NORDVPN_CATEGORY=P2P" \
             -e "WEBPROXY_ENABLED=false" \
             -e "LOCAL_NETWORK=192.168.1.0/24" \
             -e "TRANSMISSION_WEB_UI=combustion" \
