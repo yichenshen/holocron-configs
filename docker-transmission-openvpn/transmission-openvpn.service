@@ -1,16 +1,12 @@
 [Unit]
 Description=A service for starting a Docker container for Transmission with OpenVPN
-After=docker.service
 After=network-online.target
-Requires=docker.service
 Wants=nginx.service
 
 [Service]
-User=transmission
+User=root
 TimeoutStartSec=0
-ExecStartPre=-/usr/bin/docker stop transmission-openvpn
-ExecStartPre=/usr/bin/docker pull haugene/transmission-openvpn
-ExecStart=/usr/bin/docker run \
+ExecStart=/usr/bin/podman run \
             --name=transmission-openvpn \
             --rm \
             --cap-add=NET_ADMIN \
@@ -22,8 +18,7 @@ ExecStart=/usr/bin/docker run \
             --dns 8.8.4.4 \
             --sysctl net.ipv6.conf.all.disable_ipv6=1 \
             -v /var/transmission:/data:Z \
-            -v /etc/localtime:/etc/localtime:ro,Z \
-            -e "OPENVPN_PROVIDER=<VPN PROVIDER>" \
+            -e "OPENVPN_PROVIDER=NORDVPN" \
             -e "OPENVPN_USERNAME=<VPN USERNAME>" \
             -e "OPENVPN_PASSWORD=<VPN PASSWORD>" \
             -e "OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --mssfix 1452 --mute-replay-warnings" \
@@ -38,14 +33,12 @@ ExecStart=/usr/bin/docker run \
             -e "TRANSMISSION_ALT_SPEED_DOWN=1024" \
             -e "TRANSMISSION_LPD_ENABLED=true" \
             -e "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true" \
-            -e "TRANSMISSION_RPC_USERNAME=<USER>" \
-            -e "TRANSMISSION_RPC_PASSWORD=<PASSWORD>" \
+            -e "TRANSMISSION_RPC_USERNAME=<TRANSMISSION_RPC_USERNAME>" \
+            -e "TRANSMISSION_RPC_PASSWORD=<TRANSMISSION_RPC_PASSWORD>" \
             -e "TRANSMISSION_RATIO_LIMIT_ENABLED=true" \
             -e "TRANSMISSION_RATIO_LIMIT=1.5" \
-            -e "PUID=980" \
-            -e "PGID=980" \
             haugene/transmission-openvpn
-ExecStop=/usr/bin/docker stop transmission-openvpn
+ExecStop=/usr/bin/podman stop transmission-openvpn
 RestartSec=5
 Restart=on-failure
 Type=simple
