@@ -12,13 +12,28 @@ In order to run OpenVPN in a docker container, a tunnel device needs to mounted 
 
 To avoid having to do this everytime the system reboots, copy `tun.conf` to `/etc/modules-load.d/`, and change the owner to root. This will load the module on startup.
 
+## Directory
+
+Create a directory for transmission and move the env file into it so that it can be read by the systemd service.
+
+```bash
+sudo mkdir /var/transmission
+sudo mv env.list /var/transmission/
+```
+
 ## Container
 
-The container is configured here to run as a systemd service. Change `transmission-openvpn.service` to specify your credentials, and config for NordVPN. Refer to the Github page for more details.
+The container is configured here to run as a systemd service. Move the service file to `/etc/systemd/system/`. Then run `systemctl daemon-reload`.
+
+Start the service after full setup with `systemctl start transmission-openvpn`.
 
 ### Authentication
 
-You may set the username and password for the transmission web client with `TRANSMISSION_RPC_USERNAME` and `TRANSMISSION_RPC_PASSWORD`.
+Authentication parameters exists in `env.list`.
+
+Set your NordVPN username and password by replacing `<VPN USER>` and `<VPN PASSWORD>`.
+
+You may set the username and password for the transmission web client by replacing  `<TRANSMISSION_RPC_USERNAME>` and `<TRANSMISSION_RPC_PASSWORD>`.
 
 ### Networking issues
 

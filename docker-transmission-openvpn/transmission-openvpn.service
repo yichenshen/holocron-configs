@@ -18,25 +18,7 @@ ExecStart=/usr/bin/podman run \
             --dns 8.8.4.4 \
             --sysctl net.ipv6.conf.all.disable_ipv6=1 \
             -v /var/transmission:/data:Z \
-            -e "OPENVPN_PROVIDER=NORDVPN" \
-            -e "OPENVPN_USERNAME=<VPN USERNAME>" \
-            -e "OPENVPN_PASSWORD=<VPN PASSWORD>" \
-            -e "OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --mssfix 1452 --mute-replay-warnings" \
-            -e "NORDVPN_COUNTRY=US" \
-            -e "NORDVPN_CATEGORY=P2P" \
-            -e "WEBPROXY_ENABLED=false" \
-            -e "LOCAL_NETWORK=192.168.1.0/24" \
-            -e "TRANSMISSION_WEB_UI=combustion" \
-            -e "TRANSMISSION_SPEED_LIMIT_UP=1024" \
-            -e "TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true" \
-            -e "TRANSMISSION_ALT_SPEED_UP=256" \
-            -e "TRANSMISSION_ALT_SPEED_DOWN=1024" \
-            -e "TRANSMISSION_LPD_ENABLED=true" \
-            -e "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true" \
-            -e "TRANSMISSION_RPC_USERNAME=<TRANSMISSION_RPC_USERNAME>" \
-            -e "TRANSMISSION_RPC_PASSWORD=<TRANSMISSION_RPC_PASSWORD>" \
-            -e "TRANSMISSION_RATIO_LIMIT_ENABLED=true" \
-            -e "TRANSMISSION_RATIO_LIMIT=1.5" \
+            --env-file /var/transmission/env.list \
             haugene/transmission-openvpn
 ExecStop=/usr/bin/podman stop transmission-openvpn
 RestartSec=5
