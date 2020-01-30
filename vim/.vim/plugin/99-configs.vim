@@ -75,10 +75,6 @@ hi link tab Error
 set foldmethod=syntax
 set foldlevelstart=5
 
-" Show file and line position
-map <leader>pf :echo @%<CR>
-map <leader>pl :echo @%.':'.line('.')<CR>
-
 " Show the syntax group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
