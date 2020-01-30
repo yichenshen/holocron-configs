@@ -15,7 +15,7 @@ nnoremap <silent> K :ALEHover<CR>
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> gsd :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent> gvd :ALEGoToDefinitionInVSplit<CR>
-nnoremap <silent> gtd :ALEGoToDefinitionTab<CR>
+nnoremap <silent> gtd :ALEGoToDefinitionInTab<CR>
 " gk shows more details about an error
 nnoremap <silent> gk :ALEDetail<CR>
 " Find references for a function/variable
