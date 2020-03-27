@@ -4,7 +4,7 @@ au TabLeave * call AutoSave()
 au InsertLeave * call AutoSave()
 
 function AutoSave()
-  if &buftype !=# 'nofile' && @% != "" && filereadable(@%) != 0
+  if !&readonly && &buftype !=# 'nofile' && @% != "" && filereadable(@%) != 0
     noa w
   endif
 endfunction
