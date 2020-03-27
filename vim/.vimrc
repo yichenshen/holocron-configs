@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/restore_view.vim'
+Plug 'chaoren/vim-wordmotion'
 
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
