@@ -13,6 +13,9 @@ endif
 " Select paste mode
 set pastetoggle=<F2>
 
+" Update interval
+set updatetime=1000
+
 " Colors
 set t_Co=256
 set termguicolors
