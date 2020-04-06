@@ -23,3 +23,6 @@ let b:ale_linters = ['flake8']
 " Autoformat
 let g:ale_fixers.python = ['isort', 'black']
 let g:ale_python_black_options = '-l 79'
+
+" Disable ALE source in favour of Jedi
+call deoplete#custom#option('ignore_sources', {'python': ['ale']})
