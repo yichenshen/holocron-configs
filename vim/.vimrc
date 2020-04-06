@@ -41,6 +41,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-easyclip'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
