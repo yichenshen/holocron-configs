@@ -3,7 +3,7 @@ if $TERM != 'linux'
         \ 'colorscheme': 'one',
         \ 'mode_map': { 'c': 'NORMAL' },
         \ 'active': {
-        \   'left': [ ['mode', 'paste'],
+        \   'left': [ ['mode', 'paste', 'fixer'],
         \             ['fugitive', 'readonly', 'filename', 'modified'],
         \             ['asyncrun', 'ctrlpmark'] ],
         \   'right': [ ['linter_warnings', 'linter_errors', 'lineinfo'],
@@ -23,13 +23,15 @@ if $TERM != 'linux'
         \   'fugitive': 'LightLineFugitive',
         \   'linter_warnings': 'LightlineLinterWarnings',
         \   'linter_errors': 'LightlineLinterErrors',
-        \   'asyncrun': 'LightlineAsyncRunnerIndicator'
+        \   'asyncrun': 'LightlineAsyncRunnerIndicator',
+        \   'fixer': 'LightlineALEFixerOffIndicator'
         \ },
         \ 'component_type': {
         \   'fugitive': 'tabsel',
         \   'linter_warnings': 'warning',
         \   'linter_errors': 'error',
-        \   'asyncrun': 'warning'
+        \   'asyncrun': 'warning',
+        \   'fixer': 'error'
         \ },
         \ 'separator': { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
@@ -142,6 +144,10 @@ endfunction
 
 function! LightlineAsyncRunnerIndicator() abort
   return g:asyncrun_status == 'running' ? '' : ''
+endfunction
+
+function! LightlineALEFixerOffIndicator() abort
+  return g:ale_fix_on_save == 0 ? '' : ''
 endfunction
 
 let g:unite_force_overwrite_statusline = 0
