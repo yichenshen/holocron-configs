@@ -2,7 +2,8 @@
 call deoplete#custom#var('omni', 'input_patterns', { 'cpp': ['[^. *\t]\.\w*','[^. *\t]\::\w*','[^. *\t]\->\w*','#include\s*[<"][^>"]*'] })
 
 " Linters
-let g:ale_linters.hack = ['gcc', 'clangtidy']
+let g:ale_linters.c = ['gcc']
+let g:ale_linters.cpp = ['gcc']
 
 " Autoformat
 let g:ale_fixers.c = ['clang-format']
