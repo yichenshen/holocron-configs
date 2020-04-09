@@ -40,4 +40,5 @@ function! ToggleALEFixer() abort
   call lightline#update()
 endfunction
 
-noremap <F3> :call ToggleALEFixer()<CR>
+noremap zaf :call ToggleALEFixer()<CR>
+noremap zar :ALEReset<CR>
