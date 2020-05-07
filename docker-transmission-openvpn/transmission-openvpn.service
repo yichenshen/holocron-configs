@@ -21,6 +21,7 @@ ExecStart=/usr/bin/podman run \
             --env-file /var/transmission/env.list \
             haugene/transmission-openvpn
 ExecStop=/usr/bin/podman stop transmission-openvpn
+ExecStopPost=/usr/bin/podman rm -f transmission-openvpn
 RestartSec=5
 Restart=on-failure
 Type=simple
