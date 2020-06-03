@@ -1,7 +1,7 @@
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 " Use smartcase
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option('smart_case', 1)
 " Set the minimum autocompletion trigger length
 let g:deoplete#auto_completion_start_length = 1
 
