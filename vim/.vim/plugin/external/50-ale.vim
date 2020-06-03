@@ -13,9 +13,9 @@ augroup END
 nnoremap <silent> K :ALEHover<CR>
 " Type `gd` to go to definition
 nnoremap <silent> gd :ALEGoToDefinition<CR>
-nnoremap <silent> gsd :ALEGoToDefinitionInSplit<CR>
-nnoremap <silent> gvd :ALEGoToDefinitionInVSplit<CR>
-nnoremap <silent> gtd :ALEGoToDefinitionInTab<CR>
+nnoremap <silent> gsd :ALEGoToDefinition -split<CR>
+nnoremap <silent> gvd :ALEGoToDefinition -vsplit<CR>
+nnoremap <silent> gtd :ALEGoToDefinition -tab<CR>
 " gk shows more details about an error
 nnoremap <silent> gk :ALEDetail<CR>
 " Find references for a function/variable
