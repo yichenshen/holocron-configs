@@ -37,8 +37,8 @@ snippet logf "LOG(FATAL) << ..."
 LOG(FATAL) << $1;
 endsnippet
 
-snippet logerr "LOG(ERR) << ...;"
-LOG(ERR) << $1;
+snippet logerr "LOG(ERROR) << ...;"
+LOG(ERROR) << $1;
 endsnippet
 
 snippet logwarn "LOG(WARN) << ...;"
@@ -49,8 +49,8 @@ snippet loginfo "LOG(INFO) << ...;"
 LOG(INFO) << $1;
 endsnippet
 
-snippet debuglog "LOG(ERR) << [***DEBUGLOG***] << ...;"
-LOG(ERR) << "[***DEBUGLOG***]" << $1;
+snippet debuglog "LOG(ERROR) << [***DEBUGLOG***] << ...;"
+LOG(ERROR) << "[***DEBUGLOG***]" << $1;
 endsnippet
 
 snippet check "CHECK(...)"
