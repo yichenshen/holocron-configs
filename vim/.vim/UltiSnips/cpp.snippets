@@ -1,0 +1,114 @@
+priority -50
+extends c
+
+###########################################################################
+#                              Glog Snippets                              #
+###########################################################################
+
+snippet log "LOG(..) << ...;"
+LOG(${1:LEVEL}) << $2;
+endsnippet
+
+snippet logif "LOG_IF(...)"
+LOG_IF(${1:LEVEL}, ${2:COND}) << $3;
+endsnippet
+
+snippet logn "LOG_EVERY_N(...)"
+LOG_EVERY_N(${1:LEVEL}, ${2:N}) << $3;
+endsnippet
+
+snippet dlog "DLOG(..) << ...;"
+DLOG(${1:LEVEL}) << $2;
+endsnippet
+
+snippet dlogif "DLOG_IF(...)"
+DLOG_IF(${1:LEVEL}, ${2:COND}) << $3;
+endsnippet
+
+snippet dlogn "DLOG_EVERY_N(...)"
+DLOG_EVERY_N(${1:LEVEL}, ${2:N}) << $3;
+endsnippet
+
+snippet vlog "VLOG(...) << ..."
+VLOG(${1:LEVEL}) << "$2";
+endsnippet
+
+snippet logf "LOG(FATAL) << ..."
+LOG(FATAL) << $1;
+endsnippet
+
+snippet logerr "LOG(ERR) << ...;"
+LOG(ERR) << $1;
+endsnippet
+
+snippet logwarn "LOG(WARN) << ...;"
+LOG(WARN) << $1;
+endsnippet
+
+snippet loginfo "LOG(INFO) << ...;"
+LOG(INFO) << $1;
+endsnippet
+
+snippet debuglog "LOG(ERR) << [***DEBUGLOG***] << ...;"
+LOG(ERR) << "[***DEBUGLOG***]" << $1;
+endsnippet
+
+snippet check "CHECK(...)"
+CHECK(${VISUAL}$1);
+endsnippet
+
+snippet checkm "CHECK(...) << ..."
+CHECK(${1:COND}) << "${2:MESSAGE}";
+endsnippet
+
+snippet checkeq "CHECK_EQ(a,b)"
+CHECK_EQ(${1:a}, ${2:b});
+endsnippet
+
+snippet checkeqm "CHECK_EQ(a,b) << ..."
+CHECK_EQ(${1:a}, ${2:b}) << ${3:MESSAGE};
+endsnippet
+
+snippet checkne "CHECK_NE(a,b)"
+CHECK_NE(${1:a}, ${2:b});
+endsnippet
+
+snippet checknem "CHECK_NE(a,b) << ..."
+CHECK_NE(${1:a}, ${2:b}) << ${3:MESSAGE};
+endsnippet
+
+snippet checknn "CHECK_NOT_NULL(...)"
+CHECK_NOT_NULL(${VISUAL}$1);
+endsnippet
+
+snippet checknnm "CHECK_NOT_NULL(...) << ..."
+CHECK_NOT_NULL(${1:VAR}) << ${2:MESSAGE};
+endsnippet
+
+snippet dcheck "DCHECK(...)"
+DCHECK(${VISUAL}$1);
+endsnippet
+
+snippet dcheckeq "DCHECK_EQ(a,b)"
+DCHECK_EQ(${1:a}, ${2:b});
+endsnippet
+
+snippet dcheckeqm "DCHECK_EQ(a,b) << ..."
+DCHECK_EQ(${1:a}, ${2:b}) << ${3:MESSAGE};
+endsnippet
+
+snippet dcheckne "DCHECK_NE(a,b)"
+DCHECK_NE(${1:a}, ${2:b});
+endsnippet
+
+snippet dchecknem "DCHECK_NE(a,b) << ..."
+DCHECK_NE(${1:a}, ${2:b}) << ${3:MESSAGE};
+endsnippet
+
+snippet dchecknn "DCHECK_NOT_NULL(...)"
+DCHECK_NOT_NULL(${VISUAL}$1);
+endsnippet
+
+snippet dchecknnm "DCHECK_NOT_NULL(...) << ..."
+DCHECK_NOT_NULL(${1:VAR}) << ${2:MESSAGE};
+endsnippet
