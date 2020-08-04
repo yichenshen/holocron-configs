@@ -28,7 +28,7 @@ Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
-Plug 'zchee/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ponko2/deoplete-fish'
 
 " Editing
