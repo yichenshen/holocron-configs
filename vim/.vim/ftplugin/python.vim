@@ -9,13 +9,17 @@ au BufNewFile,BufRead *.mako set ft=mako
 map <buffer> F :set foldmethod=indent<cr>
 
 " AsyncRun
-map <F9> :AsyncRun -raw python3 %<cr>
-map <F10> :AsyncRun python3 %<cr>
+map <buffer> <F9> :AsyncRun -raw python3 %<cr>
+map <buffer> <F10> :AsyncRun python3 %<cr>
 
 " Jedi
 let g:jedi#goto_command = "gd"
 let g:jedi#goto_assignments_command = "ga"
 let g:jedi#usages_command = "<leader>u"
+
+nnoremap <buffer> gsd :sp<CR>:call jedi#goto()<CR>
+nnoremap <buffer> gvd :vs<CR>:call jedi#goto()<CR>
+nnoremap <buffer> gtd :tabe<CR>:call jedi#goto()<CR>
 
 " Linters
 let b:ale_linters = ['flake8']
