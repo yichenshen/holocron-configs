@@ -24,6 +24,7 @@ let g:ale_linters.javascript = ['eslint', 'flow-language-server']
 
 " Autocomplete
 let g:ale_fixers.javascript = ['prettier']
+let g:ale_fixers.javascriptreact = ['prettier']
 let g:ale_fixers["javascript.jsx"] = ['prettier']
 
 " vim-javascript options
