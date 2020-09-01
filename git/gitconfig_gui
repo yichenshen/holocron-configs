@@ -3,7 +3,11 @@
   email =
   signingkey =
 [diff]
-  external = ~/bin/diff.py
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
 [push]
   default = simple
 [alias]
