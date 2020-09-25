@@ -8,6 +8,7 @@ User=root
 TimeoutStartSec=0
 ExecStart=/usr/bin/podman run \
             --name=transmission-openvpn \
+            --no-healthcheck \
             --rm \
             --cap-add=NET_ADMIN \
             --device=/dev/net/tun \
