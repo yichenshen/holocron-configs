@@ -41,8 +41,8 @@ snippet logerr "LOG(ERROR) << ...;"
 LOG(ERROR) << $1;
 endsnippet
 
-snippet logwarn "LOG(WARN) << ...;"
-LOG(WARN) << $1;
+snippet logwarn "LOG(WARNING) << ...;"
+LOG(WARNING) << $1;
 endsnippet
 
 snippet loginfo "LOG(INFO) << ...;"
@@ -115,4 +115,8 @@ endsnippet
 
 snippet crash "DCHECK(false) << ..."
 DCHECK(false) << "$1";
+endsnippet
+
+snippet mv "std::move(...)"
+std::move($1)
 endsnippet
