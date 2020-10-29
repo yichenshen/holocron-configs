@@ -1,3 +1,8 @@
+" Don't use ALE for VSCode
+if exists('g:vscode')
+  let g:ale_enabled=0
+endif
+
 let g:ale_sign_error=''
 let g:ale_sign_style_error=''
 let g:ale_sign_warning=''
