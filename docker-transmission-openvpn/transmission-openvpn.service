@@ -11,6 +11,7 @@ ExecStart=/usr/bin/podman run \
             --no-healthcheck \
             --rm \
             --cap-add=NET_ADMIN \
+            --cap-add=AUDIT_WRITE \
             --device=/dev/net/tun \
             --log-driver json-file \
             --log-opt max-size=10m \
