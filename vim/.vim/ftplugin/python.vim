@@ -28,5 +28,8 @@ let b:ale_linters = ['flake8']
 let g:ale_fixers.python = ['isort', 'black']
 let g:ale_python_black_options = '-l 79'
 
+" Show docstrings for completion
+let g:deoplete#sources#jedi#show_docstring=1
+
 " Disable ALE source in favour of Jedi
 call deoplete#custom#option('ignore_sources', {'python': ['ale']})
