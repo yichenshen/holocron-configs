@@ -7,7 +7,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/restore_view.vim'
+
+" Motion
 Plug 'chaoren/vim-wordmotion'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
@@ -38,7 +41,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-easyclip'
 Plug 'junegunn/rainbow_parentheses.vim'
