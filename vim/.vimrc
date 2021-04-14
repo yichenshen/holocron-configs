@@ -11,6 +11,7 @@ Plug 'vim-scripts/restore_view.vim'
 " Motion
 Plug 'chaoren/vim-wordmotion'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'vim-scripts/argtextobj.vim'
 
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
