@@ -6,3 +6,6 @@ let g:ale_linters.c = ['gcc']
 
 " Autoformat
 let g:ale_fixers.c = ['clang-format']
+
+" Vim commentary
+setlocal commentstring=//\ %s
