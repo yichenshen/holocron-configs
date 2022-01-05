@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/restore_view.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Motion
 Plug 'chaoren/vim-wordmotion'
