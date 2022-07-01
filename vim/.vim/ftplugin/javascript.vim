@@ -19,9 +19,6 @@ UltiSnipsAddFiletypes javascript-node
 map <F9> :AsyncRun -raw node %<cr>
 map <F10> :AsyncRun node %<cr>
 
-" Linters
-let g:ale_linters.javascript = ['eslint', 'flow-language-server']
-
 " Autocomplete
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.javascriptreact = ['prettier']
@@ -30,3 +27,13 @@ let g:ale_fixers["javascript.jsx"] = ['prettier']
 " vim-javascript options
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
+
+" null-ls config to use eslint
+lua << EOF
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.code_actions.eslint,
+        require("null-ls").builtins.diagnostics.eslint,
+    },
+})
+EOF

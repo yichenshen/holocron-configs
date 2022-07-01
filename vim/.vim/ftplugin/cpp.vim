@@ -1,10 +1,6 @@
 " deoplete
 call deoplete#custom#var('omni', 'input_patterns', { 'cpp': ['[^. *\t]\.\w*','[^. *\t]\::\w*','[^. *\t]\->\w*','#include\s*[<"][^>"]*'] })
 
-" Linters
-let g:ale_linters.c = ['gcc']
-let g:ale_linters.cpp = ['gcc']
-
 " Autoformat
 let g:ale_fixers.c = ['clang-format']
 let g:ale_fixers.cpp = ['clang-format']
@@ -15,3 +11,7 @@ au BufEnter *.cc let b:fswitchdst = 'h'
 
 " Vim commentary
 setlocal commentstring=//\ %s
+
+" Clangd setup
+lua require('lspconfig').clangd.setup{}
+LspStart

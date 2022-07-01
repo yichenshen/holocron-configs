@@ -8,6 +8,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
 
 " Motion
 Plug 'chaoren/vim-wordmotion'
@@ -21,6 +22,7 @@ Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'derekwyatt/vim-fswitch'
+Plug 'nvim-telescope/telescope.nvim'
 
 " IDE functions
 Plug 'tpope/vim-fugitive'
@@ -28,6 +30,10 @@ Plug 'ludovicchabant/vim-lawrencium'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'w0rp/ale'
+Plug 'neovim/nvim-lspconfig'
+
+" TODO
+" Plug 'nvim-lua/lsp-status.nvim'
 
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -58,6 +64,7 @@ Plug 'honza/vim-snippets'
 
 " Language Support
 Plug 'sheerun/vim-polyglot'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'hhvm/vim-hack'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'

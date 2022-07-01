@@ -21,8 +21,14 @@ nnoremap <buffer> gsd :sp<CR>:call jedi#goto()<CR>
 nnoremap <buffer> gvd :vs<CR>:call jedi#goto()<CR>
 nnoremap <buffer> gtd :tabe<CR>:call jedi#goto()<CR>
 
-" Linters
-let b:ale_linters = ['flake8']
+" null-ls config to use flake8
+lua << EOF
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.diagnostics.flake8,
+    },
+})
+EOF
 
 " Autoformat
 let g:ale_fixers.python = ['isort', 'black']
@@ -30,6 +36,3 @@ let g:ale_python_black_options = '-l 79'
 
 " Show docstrings for completion
 let g:deoplete#sources#jedi#show_docstring=1
-
-" Disable ALE source in favour of Jedi
-call deoplete#custom#option('ignore_sources', {'python': ['ale']})
