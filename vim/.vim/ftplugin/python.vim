@@ -21,15 +21,6 @@ nnoremap <buffer> gsd :sp<CR>:call jedi#goto()<CR>
 nnoremap <buffer> gvd :vs<CR>:call jedi#goto()<CR>
 nnoremap <buffer> gtd :tabe<CR>:call jedi#goto()<CR>
 
-" null-ls config to use flake8
-lua << EOF
-require("null-ls").setup({
-    sources = {
-        require("null-ls").builtins.diagnostics.flake8,
-    },
-})
-EOF
-
 " Autoformat
 let g:ale_fixers.python = ['isort', 'black']
 let g:ale_python_black_options = '-l 79'
