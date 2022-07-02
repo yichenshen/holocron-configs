@@ -1,3 +1,3 @@
-TSEnableAll highlight
-TSEnableAll incremental_selection
-TSEnableAll indent
+TSEnable highlight
+TSEnable incremental_selection
+TSEnable indent
