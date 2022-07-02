@@ -32,9 +32,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'w0rp/ale'
 Plug 'neovim/nvim-lspconfig'
 
-" TODO
-" Plug 'nvim-lua/lsp-status.nvim'
-
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
@@ -57,6 +54,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " Status Display
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
+Plug 'nvim-lua/lsp-status.nvim'
 
 " Snippets
 Plug 'SirVer/ultisnips'

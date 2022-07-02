@@ -1,13 +1,13 @@
 if $TERM != 'linux'
   let g:lightline = {
         \ 'colorscheme': 'one',
-        \ 'mode_map': { 'c': 'NORMAL' },
         \ 'active': {
         \   'left': [ ['mode', 'paste', 'fixer'],
         \             ['fugitive', 'readonly', 'filename', 'modified'],
         \             ['asyncrun', 'ctrlpmark'] ],
-        \   'right': [ ['linter_warnings', 'linter_errors', 'lineinfo'],
+        \   'right': [ ['lineinfo'],
         \              ['percent'],
+        \              ['lsp'],
         \              ['spell', 'fileformat', 'fileencoding', 'filetype' ] ]
         \ },
         \ 'component_function': {
@@ -21,15 +21,13 @@ if $TERM != 'linux'
         \ },
         \ 'component_expand': {
         \   'fugitive': 'LightLineFugitive',
-        \   'linter_warnings': 'LightlineLinterWarnings',
-        \   'linter_errors': 'LightlineLinterErrors',
+        \   'lsp': 'LspStatus',
         \   'asyncrun': 'LightlineAsyncRunnerIndicator',
         \   'fixer': 'LightlineALEFixerOffIndicator'
         \ },
         \ 'component_type': {
         \   'fugitive': 'tabsel',
-        \   'linter_warnings': 'warning',
-        \   'linter_errors': 'error',
+        \   'lsp': 'error',
         \   'asyncrun': 'warning',
         \   'fixer': 'error'
         \ },
@@ -128,18 +126,8 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
   return lightline#statusline(0)
 endfunction
 
-function! LightlineLinterWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:all_non_errors == 0 ? '' : printf('%d ', all_non_errors)
-endfunction
-
-function! LightlineLinterErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:all_errors == 0 ? '' : printf('%d ', all_errors)
+function! LspStatus() abort
+  return trim(luaeval("require('lsp-status').status()"))
 endfunction
 
 function! LightlineAsyncRunnerIndicator() abort
@@ -153,3 +141,6 @@ endfunction
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
+
+" Periodically refresh lightline, especially helpful for LSP updates
+call timer_start(3000, {_->lightline#update()}, {'repeat': -1})
