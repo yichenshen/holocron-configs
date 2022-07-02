@@ -23,6 +23,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'folke/trouble.nvim'
 
 " IDE functions
 Plug 'tpope/vim-fugitive'
@@ -71,6 +72,7 @@ Plug 'davidhalter/jedi-vim'
 " Themes
 Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
