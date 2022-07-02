@@ -33,4 +33,26 @@ function! LspRename()
 endfunction
 noremap <leader>r <cmd>call LspRename()<CR>
 
-" TODO: formatting: <leader>ff normal mode calls vim.lsp.buf.formatting(), visual calls vim.lsp.buf.range_formatting()
+" Formatting
+let g:lsp_fix_on_save = 1
+function! ToggleFixOnSave() abort
+  if g:lsp_fix_on_save == 0
+    let g:lsp_fix_on_save = 1
+  else
+    let g:lsp_fix_on_save = 0
+  endif
+  call lightline#update()
+endfunction
+
+function! LSPFix() abort
+  if g:lsp_fix_on_save == 1
+    lua vim.lsp.buf.formatting_sync()
+  endif
+endfunction
+
+noremap zaf :call ToggleFixOnSave()<CR>
+autocmd BufWritePre <buffer> call LSPFix()
+
+" <leader>ff for manual formatting
+noremap <leader>ff :lua vim.lsp.buf.formatting()<CR>
+" TODO: formatting: visual calls vim.lsp.buf.range_formatting()

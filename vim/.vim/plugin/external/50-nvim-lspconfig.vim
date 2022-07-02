@@ -14,7 +14,7 @@ nnoremap <M-LeftMouse> <LeftMouse>:lua require"telescope.builtin".lsp_definition
 
 " LSP setups
 lua << EOF
-local servers = { "clangd", "hhvm" }
+local servers = { "clangd", "hhvm", "gopls" }
 for _, lsp in ipairs(servers) do
   require("lspconfig")[lsp].setup{}
 end

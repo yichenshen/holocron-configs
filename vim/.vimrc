@@ -30,7 +30,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'w0rp/ale'
 Plug 'neovim/nvim-lspconfig'
 
 " Deoplete

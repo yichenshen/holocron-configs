@@ -23,7 +23,7 @@ if $TERM != 'linux'
         \   'fugitive': 'LightLineFugitive',
         \   'lsp': 'LspStatus',
         \   'asyncrun': 'LightlineAsyncRunnerIndicator',
-        \   'fixer': 'LightlineALEFixerOffIndicator'
+        \   'fixer': 'LightlineLSPFixerOffIndicator'
         \ },
         \ 'component_type': {
         \   'fugitive': 'tabsel',
@@ -134,8 +134,8 @@ function! LightlineAsyncRunnerIndicator() abort
   return g:asyncrun_status == 'running' ? '' : ''
 endfunction
 
-function! LightlineALEFixerOffIndicator() abort
-  return g:ale_fix_on_save == 0 ? '' : ''
+function! LightlineLSPFixerOffIndicator() abort
+  return g:lsp_fix_on_save == 0 ? '' : ''
 endfunction
 
 let g:unite_force_overwrite_statusline = 0

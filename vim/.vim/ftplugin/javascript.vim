@@ -19,11 +19,6 @@ UltiSnipsAddFiletypes javascript-node
 map <F9> :AsyncRun -raw node %<cr>
 map <F10> :AsyncRun node %<cr>
 
-" Autocomplete
-let g:ale_fixers.javascript = ['prettier']
-let g:ale_fixers.javascriptreact = ['prettier']
-let g:ale_fixers["javascript.jsx"] = ['prettier']
-
 " vim-javascript options
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1

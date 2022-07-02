@@ -21,9 +21,5 @@ nnoremap <buffer> gsd :sp<CR>:call jedi#goto()<CR>
 nnoremap <buffer> gvd :vs<CR>:call jedi#goto()<CR>
 nnoremap <buffer> gtd :tabe<CR>:call jedi#goto()<CR>
 
-" Autoformat
-let g:ale_fixers.python = ['isort', 'black']
-let g:ale_python_black_options = '-l 79'
-
 " Show docstrings for completion
 let g:deoplete#sources#jedi#show_docstring=1
