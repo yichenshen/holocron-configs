@@ -56,6 +56,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
 Plug 'nvim-lua/lsp-status.nvim'
+Plug 'seblj/nvim-echo-diagnostics'
 
 " Snippets
 Plug 'SirVer/ultisnips'
