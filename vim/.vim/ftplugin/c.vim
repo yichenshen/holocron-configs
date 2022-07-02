@@ -6,7 +6,3 @@ let g:ale_fixers.c = ['clang-format']
 
 " Vim commentary
 setlocal commentstring=//\ %s
-
-" Clangd setup
-lua require('lspconfig').clangd.setup{}
-LspStart

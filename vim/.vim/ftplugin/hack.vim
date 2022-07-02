@@ -4,7 +4,3 @@ let balloondelay = 250
 
 " Autoformatter
 let g:ale_fixers.hack = ['hackfmt']
-
-" HHVM language server setup
-lua require('lspconfig').hhvm.setup{}
-LspStart

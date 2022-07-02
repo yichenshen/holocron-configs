@@ -11,7 +11,3 @@ au BufEnter *.cc let b:fswitchdst = 'h'
 
 " Vim commentary
 setlocal commentstring=//\ %s
-
-" Clangd setup
-lua require('lspconfig').clangd.setup{}
-LspStart

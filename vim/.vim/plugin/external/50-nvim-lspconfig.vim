@@ -23,3 +23,11 @@ nnoremap <M-LeftMouse> <LeftMouse>:lua require"telescope.builtin".lsp_definition
 
 " TODO: Rename: use <leader>r and call a function to take an input
 " TODO: formatting: <leader>ff normal mode calls vim.lsp.buf.formatting(), visual calls vim.lsp.buf.range_formatting()
+
+" LSP setups
+lua << EOF
+local servers = { "clangd", "hhvm" }
+for _, lsp in ipairs(servers) do
+  require("lspconfig")[lsp].setup{}
+end
+EOF
