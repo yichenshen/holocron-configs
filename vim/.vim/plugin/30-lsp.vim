@@ -2,7 +2,7 @@ lua << EOF
 -- Configure diagnosticss
 vim.diagnostic.config({
   virtual_text = {
-    severity = vim.diagnostic.severity.INFO,
+    severity_limit = vim.diagnostic.severity.INFO,
     prefix = "﮻",
     severity_sort = true,
   }
