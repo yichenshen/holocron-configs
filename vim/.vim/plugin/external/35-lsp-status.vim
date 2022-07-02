@@ -6,7 +6,7 @@ require('lsp-status').config {
     indicator_ok = '',
     indicator_errors = '',
     indicator_warnings = '',
-    indicator_info = '',
-    indicator_hint = '',
+    indicator_info = '',
+    indicator_hint = 'ﯦ',
 }
 EOF
