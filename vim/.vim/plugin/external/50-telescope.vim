@@ -20,12 +20,12 @@ EOF
 " Navigation
 " Type `gd` to go to definition
 nnoremap <silent> gd :lua require"telescope.builtin".lsp_definitions()<CR>
-nnoremap <silent> gvd :lua require"telescope.builtin".lsp_definitions({jump_type="split"})<CR>
+nnoremap <silent> gsd :lua require"telescope.builtin".lsp_definitions({jump_type="split"})<CR>
 nnoremap <silent> gvd :lua require"telescope.builtin".lsp_definitions({jump_type="vsplit"})<CR>
 nnoremap <silent> gtd :lua require"telescope.builtin".lsp_definitions({jump_type="tab"})<CR>
 " Type `gT` to go to the type declaration
 nnoremap <silent> gD :lua require"telescope.builtin".lsp_type_definitions()<CR>
-nnoremap <silent> gvD :lua require"telescope.builtin".lsp_type_definitions({jump_type="split"})<CR>
+nnoremap <silent> gsD :lua require"telescope.builtin".lsp_type_definitions({jump_type="split"})<CR>
 nnoremap <silent> gvD :lua require"telescope.builtin".lsp_type_definitions({jump_type="vsplit"})<CR>
 nnoremap <silent> gtD :lua require"telescope.builtin".lsp_type_definitions({jump_type="tab"})<CR>
 " Meta-click (command-click) to go to definition
