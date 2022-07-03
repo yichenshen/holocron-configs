@@ -4,22 +4,23 @@ The following vimrcs are designed to be used with neovim, and uses [vim-plug](ht
 
 ## Dependencies
 
- - neovim
- - Patched nerd fonts (refer to the `fonts/` folder)
+- neovim
+- Patched nerd fonts (refer to the `fonts/` folder)
+- C compiler to complie fzf
 
 ### For plugins
 
-For most of these plugin dependencies, vim should run fine without them if you do not need the features.
+These are mostly explicitly configured for some LSP related config. If there're missing the LSP features should just be off by default without errors.
 
- - ale.vim
+- nvim-lspconfig.vim
   - black: python code formatter
   - isort: sorts python imports
   - flake8: PEP8 linter
   - prettier: JS formatter
- - ack.vim
-  - ack: File searcher
- - deoplete.vim
-  - flow: Javascript completer
+  - eslint: JS linter
+  - clangd: C++ LSP
+- telescope.vim
+  - rip-grep: File searcher
 
 ## Neovim setup
 
@@ -40,12 +41,12 @@ sudo npm install -g neovim
 
 Run `install.sh`. It does the following:
 
- - Symlinks both `.vimrc` and `.vim` to `~`
+- Symlinks both `.vimrc` and `.vim` to `~`
   - `vimrc` contains the vim-plug packages
   - `.vim` contains custom configs for languages and the plugins
- - Symlinks `init.vim` to `~/.config/nvim/init.vim`
+- Symlinks `init.vim` to `~/.config/nvim/init.vim`
   - This makes neovim make use of traditional vim's config structure
- - Installs vim-plug
+- Installs vim-plug
 
 ## Install plugins
 
