@@ -39,6 +39,9 @@ cmp.setup({
       { name = "ultisnips" },
     },
     {
+      { name = "fish" },
+    },
+    {
       { name = 'buffer' },
       { name = 'calc' },
       { name = 'path' },
