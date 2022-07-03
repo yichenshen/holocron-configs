@@ -15,7 +15,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<Esc>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.abort()
+        cmp.mapping.abort()
         vim.cmd('stopinsert')
       else
         fallback()
