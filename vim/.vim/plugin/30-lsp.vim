@@ -17,7 +17,7 @@ end
 EOF
 
 " Type `gD` to go to declartion
-nnoremap <silent> gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr :lua vim.lsp.buf.declaration()<CR>
 
 " Press `K` to view the type in the gutter
 nnoremap <silent> K :lua vim.lsp.buf.hover()<CR>
