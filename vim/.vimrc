@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 " Generic Vim functions
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
