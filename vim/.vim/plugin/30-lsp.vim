@@ -53,6 +53,6 @@ endfunction
 noremap zaf :call ToggleFixOnSave()<CR>
 autocmd BufWritePre <buffer> call LSPFix()
 
-" <leader>ff for manual formatting
-noremap <leader>ff :lua vim.lsp.buf.formatting_seq_sync()<CR>
-" TODO: formatting: visual calls vim.lsp.buf.range_formatting()
+" <leader>ff for manual formatting, visual
+nnoremap zf <cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>
+vnoremap zf <ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>
