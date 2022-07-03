@@ -33,7 +33,7 @@ nnoremap <M-LeftMouse> <LeftMouse>:lua require"telescope.builtin".lsp_definition
 
 " Files
 noremap <c-p> <cmd>Telescope find_files<CR>
-noremap <c-b> <cmd>Telescope old_files<CR>
+noremap <c-b> <cmd>Telescope oldfiles<CR>
 " Buffers
 noremap <c-o> <cmd>Telescope buffers<CR>
 noremap <c-g> <cmd>Telescope jumplist<CR>
