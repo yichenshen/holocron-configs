@@ -46,7 +46,7 @@ endfunction
 
 function! LSPFix() abort
   if g:lsp_fix_on_save == 1
-    lua vim.lsp.buf.formatting_sync()
+    lua vim.lsp.buf.formatting_seq_sync()
   endif
 endfunction
 
@@ -54,5 +54,5 @@ noremap zaf :call ToggleFixOnSave()<CR>
 autocmd BufWritePre <buffer> call LSPFix()
 
 " <leader>ff for manual formatting
-noremap <leader>ff :lua vim.lsp.buf.formatting()<CR>
+noremap <leader>ff :lua vim.lsp.buf.formatting_seq_sync()<CR>
 " TODO: formatting: visual calls vim.lsp.buf.range_formatting()
