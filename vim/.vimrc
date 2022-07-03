@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'folke/trouble.nvim'
 
 " IDE functions

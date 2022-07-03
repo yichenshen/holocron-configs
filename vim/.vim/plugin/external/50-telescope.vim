@@ -12,8 +12,9 @@ require('telescope').setup{
         }
     }
 }
-EOF
 
+require('telescope').load_extension('vim_bookmarks')
+EOF
 
 " Navigation
 " Type `gd` to go to definition
@@ -40,3 +41,6 @@ noremap <c-t> <cmd>Telescope lsp_document_symbols<CR>
 noremap <c-s> <cmd>Telescope lsp_workspace_symbols<CR>
 " Grep
 noremap <c-f> <cmd>Telescope live_grep<CR>
+" Bookmarks
+map ml <cmd>Telescope vim_bookmarks current_file<CR>
+map ma <cmd>Telescope vim_bookmarks all<CR>
