@@ -51,7 +51,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-easyclip'
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'p00f/nvim-ts-rainbow'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
