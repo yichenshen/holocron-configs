@@ -13,12 +13,18 @@ The following vimrcs are designed to be used with neovim, and uses [vim-plug](ht
 These are mostly explicitly configured for some LSP related config. If there're missing the LSP features should just be off by default without errors.
 
 - nvim-lspconfig.vim
-  - black: python code formatter
-  - isort: sorts python imports
-  - flake8: PEP8 linter
+
+  - pylsp: Python LSP
+    - flake8: linter
+    - black/python-lsp-black: formatter
+    - isort/pyls-isort: formatter
+    - jedi: completion and code engine
   - prettier: JS formatter
   - eslint: JS linter
   - clangd: C++ LSP
+  - hhvm: Hack LSP
+  - golsp: Go LSP
+
 - telescope.vim
   - rip-grep: File searcher
 
