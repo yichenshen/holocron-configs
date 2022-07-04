@@ -17,6 +17,7 @@ null_ls.setup({
             null_ls.builtins.diagnostics.shellcheck,
             -- fish
             null_ls.builtins.diagnostics.fish,
+            null_ls.builtins.formatting.fish_indent,
       },
 })
 EOF
