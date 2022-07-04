@@ -17,8 +17,6 @@ null_ls.setup({
             null_ls.builtins.diagnostics.shellcheck,
             -- fish
             null_ls.builtins.diagnostics.fish,
-            -- ruby
-            null_ls.builtins.diagnostics.rubocop,
       },
 })
 EOF

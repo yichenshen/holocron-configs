@@ -24,6 +24,7 @@ These are mostly explicitly configured for some LSP related config. If there're 
   - clangd: C++ LSP
   - hhvm: Hack LSP
   - golsp: Go LSP
+  - solargraph: Ruby LSP
 
 - telescope.vim
   - rip-grep: File searcher
