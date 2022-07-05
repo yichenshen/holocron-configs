@@ -141,6 +141,3 @@ endfunction
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
-
-" Periodically refresh lightline, especially helpful for LSP updates
-call timer_start(3000, {_->lightline#update()}, {'repeat': -1})

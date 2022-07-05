@@ -56,3 +56,11 @@ autocmd BufWritePre * call LSPFix()
 " <leader>ff for manual formatting, visual
 nnoremap zf <cmd>lua vim.lsp.buf.formatting_seq_sync({}, 10000)<CR>
 vnoremap zf <ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>
+
+" Update lightline when we publish stats
+lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
+  vim.lsp.diagnostic.on_publish_diagnostics(...)
+  vim.fn['lightline#update']()
+end
+EOF
