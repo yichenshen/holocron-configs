@@ -131,7 +131,7 @@ function! LspStatus() abort
 endfunction
 
 function! LightlineAsyncRunnerIndicator() abort
-  return g:asyncrun_status == 'running' ? '' : ''
+  return g:asyncrun_status == 'running' ? '' : ''
 endfunction
 
 function! LightlineLSPFixerOffIndicator() abort
