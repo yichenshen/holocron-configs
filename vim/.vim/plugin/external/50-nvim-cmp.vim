@@ -21,6 +21,7 @@ cmp.setup({
         fallback()
       end
     end),
+    ['<C-c>'] = cmp.mapping.close(),
     ['<C-e>'] = cmp.mapping.confirm({
       select = false,
       behavior = cmp.ConfirmBehavior.Replace,
