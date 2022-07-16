@@ -20,7 +20,7 @@ Plug 'vim-scripts/argtextobj.vim'
 
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
-Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'nvim-telescope/telescope.nvim'
