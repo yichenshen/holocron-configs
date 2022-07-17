@@ -46,6 +46,7 @@ endfunction
 
 function! LSPFix() abort
   if g:lsp_fix_on_save == 1
+    noa w
     lua vim.lsp.buf.formatting_seq_sync({}, 10000)
   endif
 endfunction
