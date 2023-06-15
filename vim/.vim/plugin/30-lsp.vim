@@ -56,7 +56,7 @@ autocmd BufWritePre * call LSPFix()
 
 " <leader>ff for manual formatting, visual
 nnoremap zf <cmd>lua vim.lsp.buf.format({}, 10000)<CR>
-vnoremap zf <ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>
+vnoremap zf <cmd>lua vim.lsp.buf.format({}, 10000)<CR>
 
 " Update lightline when we publish stats
 lua << EOF
