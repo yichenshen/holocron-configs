@@ -8,4 +8,4 @@ ln -s -f $(git rev-parse --show-toplevel)/fish/fish_plugins ~/.config/fish/
 ln -s -f $(git rev-parse --show-toplevel)/fish/fish_colors ~/.config/fish/
 
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-fish -c fisher
+fish -c "fisher update"
