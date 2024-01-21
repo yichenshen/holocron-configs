@@ -8,7 +8,8 @@ The bash configs here are a minimal setup meant to support `fish`, if it exists.
 
 ## Dependencies
 
- - fish
+- fish
+- neovim
 
 ## Setup
 

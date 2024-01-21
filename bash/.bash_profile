@@ -2,6 +2,9 @@
 
 # User specific environment and startup programs
 
+# Editor
+export EDITOR="nvim"
+
 # Term color
 export TERM="xterm-256color"
 # Locale
