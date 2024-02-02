@@ -6,7 +6,11 @@ These files serves as template files for various NGINX web/reverse proxy applica
 
 Configurations are available for:
 
- - Plex
+ - Emby
+ - Fedora Cockpit
+ - Transmission
+ - www
+ - https redirects
 
 ### Directory sturcture
 
@@ -36,6 +40,15 @@ The default configuration assumes that SSL is setup accordingly for Cloudflare, 
 Then restart NGINX: `sudo systemctl restart nginx`.
 
 > You can also symlink the configurations for auto updates, but keep in mind that SELinux will need to be configured for permission issues. Also keep in mind that NGINX has to be restarted for changes to take effect.
+
+### SELinux
+
+NGINX can only access httpd_config_t files. If symlinking, the original files need to be set to the right context.
+
+```sh
+semanage fcontext -a -t httpd_config_t '$(git rev-parse --show-toplevel)/nginx(/.*)?'
+restorecon -R .
+```
 
 ## Auth
 
