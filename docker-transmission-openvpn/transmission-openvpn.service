@@ -6,12 +6,14 @@ Wants=nginx.service
 [Service]
 User=root
 TimeoutStartSec=0
+ExecStartPre=/usr/bin/podman pull docker.io/haugene/transmission-openvpn:edge
 ExecStart=/usr/bin/podman run \
             --name=transmission-openvpn \
             --no-healthcheck \
             --rm \
-            --cap-add=NET_ADMIN \
-            --cap-add=AUDIT_WRITE \
+            --cap-add=net_admin \
+            --cap-add=audit_write \
+            --cap-add=mknod \
             --device=/dev/net/tun \
             --log-driver json-file \
             --log-opt max-size=10m \
@@ -21,7 +23,7 @@ ExecStart=/usr/bin/podman run \
             --sysctl net.ipv6.conf.all.disable_ipv6=1 \
             -v /var/transmission:/data:Z \
             --env-file /var/transmission/env.list \
-            haugene/transmission-openvpn
+            haugene/transmission-openvpn:edge
 ExecStop=/usr/bin/podman stop transmission-openvpn
 ExecStopPost=/usr/bin/podman rm -f transmission-openvpn
 RestartSec=5
