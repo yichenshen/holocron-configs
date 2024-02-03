@@ -6,7 +6,7 @@ Wants=nginx.service
 [Service]
 User=root
 TimeoutStartSec=0
-ExecStartPre=/usr/bin/podman pull docker.io/haugene/transmission-openvpn:edge
+ExecStartPre=/usr/bin/podman pull docker.io/haugene/transmission-openvpn
 ExecStart=/usr/bin/podman run \
             --name=transmission-openvpn \
             --no-healthcheck \
@@ -23,7 +23,7 @@ ExecStart=/usr/bin/podman run \
             --sysctl net.ipv6.conf.all.disable_ipv6=1 \
             -v /var/transmission:/data:Z \
             --env-file /var/transmission/env.list \
-            haugene/transmission-openvpn:edge
+            haugene/transmission-openvpn
 ExecStop=/usr/bin/podman stop transmission-openvpn
 ExecStopPost=/usr/bin/podman rm -f transmission-openvpn
 RestartSec=5
