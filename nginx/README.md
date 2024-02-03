@@ -35,7 +35,7 @@ sudo ln -s default.d/* /etc/nginx/default.d/
 sudo ln -s conf.d/* /etc/nginx/conf.d/
 ```
 
-The default configuration assumes that SSL is setup accordingly for Cloudflare, refere below.
+The default configuration assumes that SSL is setup accordingly for Cloudflare, refer below.
 
 Then restart NGINX: `sudo systemctl restart nginx`.
 
@@ -63,26 +63,21 @@ sudo sh -c "openssl passwd -apr1 >> /etc/nginx/.htpasswd"
 
 Below are instructions for setting up HTTPS using [letsencrypt](https://letsencrypt.org) and [certbot](https://certbot.eff.org/).
 
-### INI File
+### Install
 
-Create `/etc/letsencrypt/cloudflare.ini` with the format:
-
-```
-# Cloudflare API credentials used by Certbot
-dns_cloudflare_email = cloudflare@example.com
-dns_cloudflare_api_key = 0123456789abcdef0123456789abcdef01234567
-```
-
-Change the permission to for the ini file to `600`:
-```sh
-sudo chmod 600 /etc/letsencrypt/cloudflare.ini
-```
-
-### Command
+Install certbot as well as the NGINX plugin:
 
 ```sh
-sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /etc/letsencrypt/cloudflare.ini --post-hook "systemctl restart nginx" -d <domain1> -d <domain2>
+sudo dnf install certbot python3-certbot-nginx
 ```
+
+### Setup
+
+```sh
+sudo certbot certonly --nginx
+```
+
+Follow the prompts. Refer to Cloudflare for list of domains. This requests a cert and stores it at `/etc/letsencrypt/live/ycholocron.com/`
 
 ### Renewal
 
@@ -98,3 +93,11 @@ sudo systemctl start certbot-renew.timer
 Set up cloudflare client verification by downloading the Cloudflare client cert and placing it in `/etc/nginx/certs/`.
 
 Refer to `default.d/ssh.conf` for more details.
+
+### DH Param
+
+Generate a stronger Diffie-Hellman parameter:
+
+```sh
+sudo openssl dhparm --out /etc/nginx/certs/dhparam.pem 4096
+```
