@@ -50,6 +50,13 @@ semanage fcontext -a -t httpd_config_t '$(git rev-parse --show-toplevel)/nginx(/
 restorecon -R .
 ```
 
+We have a couple of reverse proxy setups too. We have to enable these with SELinux:
+
+```sh
+setsebool -P httpd_can_network_connect 1
+setsebool -P httpd_can_network_relay 1
+```
+
 ## Auth
 
 Some server blocks may make use of basic authentication. You'll need a password file to be able to use them. Create one with `openssl`:
