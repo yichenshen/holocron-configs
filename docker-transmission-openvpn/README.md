@@ -45,17 +45,33 @@ sudo loginctl enable-linger transmission
 sudo chown -R transmission /var/transmission
 ```
 
+## Authentication
+
+There are two sets of authentication username/passwords. One to login to NordVPN, and on to set as the authentication for the WebUI.
+
+Both are configured via secrets.
+
+### NordVPN
+
+WebUI authentication must be in a secret named `openvpn_creds`. The secret should be a file with the first line as username, and second line as password. Make this file available as `/home/transmission/openvpn_creds`, then run:
+
+```bash
+machinectl shell transmission@ /usr/bin/podman secret create openvpn_creds ~/openvpn_creds
+machinectl shell transmission@ /usr/bin/rm ~/openvpn_creds
+```
+
+### WebUI
+
+WebUI authentication is similar, but should be in a secret called `rpc_creds`.
+
+```bash
+machinectl shell transmission@ /usr/bin/podman secret create rpc_creds ~/rpc_creds
+machinectl shell transmission@ /usr/bin/rm ~/rpc_creds
+```
+
 ## Container
 
 The container is configured here to run as a systemd container with podman systemd. Copy `transmission-openvpn.container` to `/home/transmission/.config/container/systemd/` (create directory under transmission if not present) and`chown` it to `transmission`. Similarly, copy `env.list` to `/home/transmission/` and chown it as well.
-
-### Authentication
-
-Authentication parameters exists in `env.list`.
-
-Set your NordVPN username and password by replacing `<VPN USERNAME>` and `<VPN PASSWORD>`.
-
-You may set the username and password for the transmission web client by replacing  `<TRANSMISSION_RPC_USERNAME>` and `<TRANSMISSION_RPC_PASSWORD>`.
 
 ### Start container
 
