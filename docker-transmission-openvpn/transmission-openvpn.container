@@ -1,0 +1,23 @@
+[Unit]
+Description=A container for Transmission with OpenVPN
+After=network-online.target local-fs.target
+Wants=nginx.service
+
+[Container]
+Image=docker.io/haugene/transmission-openvpn:latest
+AutoUpdate=registry
+
+AddCapability=CAP_NET_ADMIN CAP_NET_RAW CAP_AUDIT_WRITE CAP_MKNOD
+AddDevice=/dev/net/tun
+EnvironmentFile=/home/transmission/env.list
+Volume=/var/transmission:/data
+Volume=transmission-openvpn:/config
+
+DNS=2606:4700:4700:0:0:0:0:64
+DNS=2606:4700:4700:0:0:0:0:6400
+DNS=1.1.1.1
+DNS=1.0.0.1
+PublishPort=9091:9091/tcp
+
+[Install]
+WantedBy=default.target
