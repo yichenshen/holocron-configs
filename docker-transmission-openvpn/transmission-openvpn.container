@@ -9,7 +9,7 @@ AutoUpdate=registry
 
 AddCapability=CAP_NET_ADMIN CAP_NET_RAW CAP_AUDIT_WRITE CAP_MKNOD
 AddDevice=/dev/net/tun
-EnvironmentFile=/home/transmission/env.list
+
 Volume=/var/transmission:/data
 Volume=transmission-openvpn:/config
 
@@ -18,6 +18,17 @@ DNS=2606:4700:4700:0:0:0:0:6400
 DNS=1.1.1.1
 DNS=1.0.0.1
 PublishPort=9091:9091/tcp
+
+Environment="OPENVPN_PROVIDER=NORDVPN"
+Environment="OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --mssfix 1452 --mute-replay-warnings"
+Environment="NORDVPN_COUNTRY=US"
+Environment="NORDVPN_CATEGORY=P2P"
+Environment="WEBPROXY_ENABLED=false"
+Environment="CREATE_TUN_DEVICE=false"
+Environment="LOCAL_NETWORK=192.168.0.0/24"
+Environment="LOG_TO_STDOUT=true"
+Environment="TRANSMISSION_WEB_UI=flood-for-transmission"
+Environment="TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true"
 
 Secret=openvpn_creds
 Secret=rpc_creds
