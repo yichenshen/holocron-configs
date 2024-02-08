@@ -18,6 +18,7 @@ DNS=2606:4700:4700:0:0:0:0:6400
 DNS=1.1.1.1
 DNS=1.0.0.1
 PublishPort=9091:9091/tcp
+Sysctl=net.ipv6.conf.all.disable_ipv6=1
 
 Environment="OPENVPN_PROVIDER=NORDVPN"
 Environment="OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --mssfix 1452 --mute-replay-warnings"
