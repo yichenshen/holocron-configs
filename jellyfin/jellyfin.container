@@ -11,6 +11,7 @@ Tmpfs=/config/transcodes:rw,nodev,noexec,nosuid,size=32G,mode=1777
 
 [Service]
 # Inform systemd of additional exit status
+ExecStartPre=nvidia-ctk cdi generate
 SuccessExitStatus=0 143
 
 [Install]
