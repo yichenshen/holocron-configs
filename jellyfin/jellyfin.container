@@ -1,0 +1,18 @@
+[Container]
+Image=docker.io/jellyfin/jellyfin:latest
+AutoUpdate=registry
+PublishPort=8096:8096/tcp
+UserNS=keep-id
+AddDevice=nvidia.com/gpu=all
+Volume=jellyfin-config:/config:Z
+Volume=jellyfin-cache:/cache:Z
+Volume=/var/media:/media:Z
+Tmpfs=/config/transcodes:rw,nodev,noexec,nosuid,size=32G,mode=1777
+
+[Service]
+# Inform systemd of additional exit status
+SuccessExitStatus=0 143
+
+[Install]
+# Start by default on boot
+WantedBy=default.target
