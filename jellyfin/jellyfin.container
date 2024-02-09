@@ -2,6 +2,8 @@
 Image=docker.io/jellyfin/jellyfin:latest
 AutoUpdate=registry
 PublishPort=8096:8096/tcp
+PublishPort=1900:1900/udp
+PublishPort=7359:7359/udp
 UserNS=keep-id
 AddDevice=nvidia.com/gpu=all
 Volume=jellyfin-config:/config:Z
