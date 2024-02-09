@@ -4,6 +4,7 @@ AutoUpdate=registry
 PublishPort=8096:8096/tcp
 PublishPort=1900:1900/udp
 PublishPort=7359:7359/udp
+Environment=JELLYFIN_PublishedServerUrl=jellyfin.ycholocron.com
 UserNS=keep-id
 AddDevice=nvidia.com/gpu=all
 Volume=jellyfin-config:/config:Z
