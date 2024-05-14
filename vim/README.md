@@ -25,6 +25,7 @@ These are mostly explicitly configured for some LSP related config. If there're 
   - hhvm: Hack LSP
   - golsp: Go LSP
   - solargraph: Ruby LSP
+  - rust-analyzer: Rust LSP
 
 - telescope.vim
   - rip-grep: File searcher
