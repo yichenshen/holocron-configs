@@ -21,7 +21,6 @@ Plug 'vim-scripts/argtextobj.vim'
 " Searching and Browsing
 Plug 'jlanzarotta/bufexplorer'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
