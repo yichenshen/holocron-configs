@@ -10,20 +10,6 @@ require("trouble").setup{
           open_vsplit = { "v" }, -- open buffer in new vsplit
           open_tab = { "t" } -- open buffer in new tab
     },
-    icons = {
-        kinds = {
-            Array         = "󰅪 ",
-            Class         = "󱏒 ",
-            Event         = "󱐌 ",
-            File          = " ",
-            Key           = " ",
-            Object        = "󰘦 ",
-            Operator      = "󱓉 ",
-            String        = "󰅳 ",
-            TypeParameter = " ",
-            Variable      = "󰫧 ",
-        },
-    },
 }
 EOF
 
