@@ -70,7 +70,7 @@ function! LightLineFileformat()
 endfunction
 
 function! LightLineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype.' '.WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype.' '.WebDevIconsGetFileTypeSymbol() : 'no ft ') : ''
 endfunction
 
 function! LightLineFileencoding()
@@ -129,7 +129,7 @@ function! LightlineAsyncRunnerIndicator() abort
 endfunction
 
 function! LightlineLSPFixerOffIndicator() abort
-  return g:lsp_fix_on_save == 0 ? '' : ''
+  return g:lsp_fix_on_save == 0 ? '󰁨' : ''
 endfunction
 
 let g:unite_force_overwrite_statusline = 0
