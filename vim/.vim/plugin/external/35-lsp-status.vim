@@ -4,9 +4,9 @@ require('lsp-status').config {
     show_filename = false,
     status_symbol = '',
     indicator_ok = '',
-    indicator_errors = '',
-    indicator_warnings = '',
-    indicator_info = '',
-    indicator_hint = 'ﯦ',
+    indicator_errors = '',
+    indicator_warnings = '',
+    indicator_info = '',
+    indicator_hint = '',
 }
 EOF
