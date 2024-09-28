@@ -1,0 +1,66 @@
+priority -50
+
+snippet debuglog "println!([***DEBUGLOG***] ...)" b
+println!("[***DEBUGLOG***] $1"); // @@nocommit
+endsnippet
+
+snippet as "assert!(...);" b
+assert!($1);
+endsnippet
+
+snippet aeq "assert_eq!(a, b);" b
+assert_eq!(${1:a}, ${2:b});
+endsnippet
+
+snippet das "debug_assert!(...);" b
+debug_assert!($1);
+endsnippet
+
+snippet dead "#[expect(dead_code)]" b
+#[expect(dead_code)]
+endsnippet
+
+snippet opt "Option<T> b
+Option<${1:T}>
+endsnippet
+
+snippet sm "Some(...)" b
+Some($1)
+endsnippet
+
+snippet res "Result<T>" b
+Result<${1:R}>
+endsnippet
+
+snippet res2 "Result<T, E>" b
+Result<${1:T}, ${2:E}>
+endsnippet
+
+snippet ok "Ok(())" b
+Ok(())
+endsnippet
+
+snippet okv "Ok(val)" b
+Ok(${1:val})
+endsnippet
+
+snippet er "Err(e)" b
+Err(${1:e})
+endsnippet
+
+snippet .aw ".await" b
+.await$0
+endsnippet
+
+snippet spawn "tokio::spawn(async move {...});" b
+tokio::spawn(async move {$1});
+endsnippet
+
+snippet testmod "#[cfg(test)]" b
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	$1
+}
+endsnippet
