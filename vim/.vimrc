@@ -69,7 +69,9 @@ Plug 'honza/vim-snippets'
 
 " Language Support
 Plug 'sheerun/vim-polyglot'
-Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'nvimtools/none-ls.nvim'
+Plug 'nvimtools/none-ls-extras.nvim'
+Plug 'gbprod/none-ls-shellcheck.nvim'
 Plug 'hhvm/vim-hack'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
