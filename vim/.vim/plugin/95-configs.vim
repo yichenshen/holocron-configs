@@ -72,9 +72,8 @@ endfunction
 syn match tab display "\t"
 hi link tab Error
 
-" Set automatic folding
-set foldmethod=syntax
-set foldlevelstart=9001
+" Disable folding
+set nofoldenable
 
 " Show the syntax group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
