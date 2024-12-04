@@ -73,7 +73,7 @@ machinectl shell jellyfin@ /usr/bin/mkdir -p ~/.config/containers/systemd
 sudo cp jellyfin.container /home/jellyfin/.config/containers/systemd/
 sudo chown jellyfin:jellyfin /home/jellyfin/.config/containers/systemd/jellyfin.container
 machinectl shell jellyfin@ /usr/bin/systemctl --user daemon-reload
-machinectl shell jellyfin@ /usr/bin/systemctl --user start transmission-openvpn
+machinectl shell jellyfin@ /usr/bin/systemctl --user start jellyfin
 ```
 
 After this is started, you should be able to connect via the Jellyfin URL in the NGINX server block directly to setup Jellyfin. Check for GPU with
