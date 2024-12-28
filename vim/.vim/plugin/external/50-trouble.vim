@@ -15,6 +15,8 @@ EOF
 
 " Setup for various lists
 map <leader>ld :Trouble diagnostics toggle<CR>
+map <leader>ln :Trouble diagnostics next<CR>
+map <leader>lp :Trouble diagnostics previous<CR>
 map <leader>lc :Trouble quickfix toggle<CR>
 map <leader>ll :Trouble loclist toggle<CR>
 
