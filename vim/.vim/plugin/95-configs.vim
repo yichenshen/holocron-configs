@@ -10,9 +10,6 @@ if has('clipboard')
   endif
 endif
 
-" Select paste mode
-set pastetoggle=<F2>
-
 " Update interval
 set updatetime=1000
 
