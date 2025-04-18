@@ -55,7 +55,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
-Plug 'p00f/nvim-ts-rainbow'
+Plug 'hiphish/rainbow-delimiters.nvim'
 
 " Status Display
 Plug 'itchyny/lightline.vim'
