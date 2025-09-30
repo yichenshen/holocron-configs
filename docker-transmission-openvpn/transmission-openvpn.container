@@ -34,5 +34,8 @@ Environment="TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true"
 Secret=openvpn_creds
 Secret=rpc_creds
 
+[Service]
+Restart=always
+
 [Install]
 WantedBy=default.target
