@@ -1,0 +1,21 @@
+[Unit]
+Description=A container for Home Assistant
+After=network-online.target
+
+[Container]
+Image=ghcr.io/home-assistant/home-assistant:stable
+AutoUpdate=registry
+
+Volume=ha-config:/config
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/run/dbus:/run/dbus:ro
+
+Network=host
+
+PodmanArgs=--privileged
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
