@@ -71,7 +71,7 @@ machinectl shell transmission@ /usr/bin/rm ~/rpc_creds
 
 ## Container
 
-The container is configured here to run as a systemd container with podman systemd. Copy `transmission-openvpn.container` to `/home/transmission/.config/container/systemd/` (create directory under transmission if not present) and`chown` it to `transmission`.
+The container is configured here to run as a systemd container with podman systemd. Copy `transmission-openvpn.container` to `/home/transmission/.config/containers/systemd/` (create directory under transmission if not present) and`chown` it to `transmission`.
 
 ### Start container
 
