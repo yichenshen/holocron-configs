@@ -35,4 +35,44 @@ machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
 machinectl shell ha@ /usr/bin/systemctl --user start homeassistant
 ```
 
-After this is started, you should be able to connect via the Home Assistant URL in the NGINX server block directly to setup Home Assistant.
+After this is started, when navigating to the Home Assistant URL, you'll get an error 400 response. This is because Home Assistant does not allow proxies unless allowlisted.
+
+You can still sanity check if HA is running by temporarily allowing the HA port for direct access:
+
+```bash
+sudo firewall-cmd --add-port=8123/tcp
+```
+
+Then you can temporarily connect directly to HA with `http://<ip>:8123`. Note that SSL is not setup at this point.
+
+## Allowlist Proxy
+
+To setup the reverse proxy you need the configuration as specified [here](https://www.home-assistant.io/integrations/http/#reverse-proxies).
+
+We used a named volume to setup the HA config directory, so we need to mount it and modify it.
+
+```bash
+sudo machinectl shell ha@ /usr/bin/podman unshare /usr/bin/podman volume mount ha-config
+```
+
+This will return a directory. You can find `configuration.yaml` in that directory. Open and modify it to add
+
+```yaml
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+```
+
+Save and unmount the volume, then restart the container.
+
+```bash
+sudo machinectl shell ha@ /usr/bin/podman unshare /usr/bin/podman volume unmount ha-config
+sudo machinectl shell ha@ /usr/bin/systemctl --user restart homeassistant
+```
+
+You should now be able to connect to HA directly via the URL with vanilla SSL port 443. You can reset the firewall to close up port 8123 after this.
+
+```bash
+sudo firewall-cmd --reload
+```
