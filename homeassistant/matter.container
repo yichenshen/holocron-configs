@@ -1,0 +1,20 @@
+[Unit]
+Description=Matter Server for Home Assistant
+After=network-online.target
+
+[Container]
+Image=ghcr.io/matter-js/python-matter-server:stable
+AutoUpdate=registry
+
+Volume=ha-matter:/data
+Volume=/run/dbus:/run/dbus:ro
+
+Network=host
+
+PodmanArgs=--security-opt=apparmor=unconfined
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

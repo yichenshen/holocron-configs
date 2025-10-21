@@ -29,7 +29,7 @@ Move the container file to `ha` user's container folder and start the container.
 
 ```bash
 machinectl shell ha@ /usr/bin/mkdir -p ~/.config/containers/systemd
-sudo cp ha.container /home/ha/.config/containers/systemd/
+sudo cp homeassistant.container /home/ha/.config/containers/systemd/
 sudo chown ha:ha /home/ha/.config/containers/systemd/homeassistant.container
 machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
 machinectl shell ha@ /usr/bin/systemctl --user start homeassistant
@@ -79,3 +79,16 @@ You should now be able to connect to HA directly via the URL with vanilla SSL po
 ```bash
 sudo firewall-cmd --reload
 ```
+
+## Matter Server
+
+To allow for HA to control Matter devices, we need to run the Matter server as well. This is done with another container.
+
+```bash
+sudo cp matter.container /home/ha/.config/containers/systemd/
+sudo chown ha:ha /home/ha/.config/containers/systemd/matter.container
+machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
+machinectl shell ha@ /usr/bin/systemctl --user start matter
+```
+
+This should start the matter server on port 5580.
