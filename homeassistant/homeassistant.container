@@ -10,7 +10,10 @@ Volume=ha-config:/config
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/run/dbus:/run/dbus:ro
 
-Network=host
+AddCapability=CAP_NET_RAW
+AddCapability=CAP_NET_BIND_SERVICE
+
+PublishPort=8123:8123/tcp
 
 PodmanArgs=--privileged
 

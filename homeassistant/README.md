@@ -62,7 +62,10 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 127.0.0.1
+    - <lan ip>
 ```
+
+You can check the value needed for `<lan ip>` from the HA UI interface under Settings => System => Logs, where you should see an error if you tried to connect with the URL through NGINX.
 
 Save and unmount the volume, then restart the container.
 
