@@ -91,4 +91,15 @@ machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
 machinectl shell ha@ /usr/bin/systemctl --user start matter
 ```
 
-This should start the matter server on port 5580.
+This should start the Matter server on port 5580. You can then add it as an HA integration by supplying the url with port 5580.
+
+## Thread
+
+One final step is to allow for Thread border router discovery. We need to expose the mdns port for this.
+
+```
+sudo firewall-cmd --add-service=mdns
+sudo firewall-cmd --add-service=mdns --permanent
+```
+
+After this, HA's Thread integration should pick up any border routers you have, assuming they're on the same VLAN. You can follow the [instructions](https://www.home-assistant.io/integrations/thread) to configure the default Thread network. You'll be able to add Matter on Thread devices like any other Matter device after this.
