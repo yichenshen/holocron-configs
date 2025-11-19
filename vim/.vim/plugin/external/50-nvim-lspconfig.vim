@@ -1,14 +1,17 @@
 " LSP setups
 lua << EOF
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-capabilities.offsetEncoding = { "utf-16" }
+capabilities.offsetEncoding = "utf-16"
 
 local servers = { "clangd", "hhvm", "gopls", "solargraph", "rust_analyzer"}
 for _, lsp in ipairs(servers) do
-  require("lspconfig")[lsp].setup{ capabilities = capabilities }
+  vim.lsp.config(lsp, {
+    capabilities = capabilities
+  })
+  vim.lsp.enable(lsp)
 end
 
-require("lspconfig").pylsp.setup {
+vim.lsp.config("pylsp", {
   settings = {
     pylsp = {
       configurationSources = {"flake8"},
@@ -28,5 +31,6 @@ require("lspconfig").pylsp.setup {
     }
   },
   capabilities = capabilities
-}
+})
+vim.lsp.enable("pylsp")
 EOF
