@@ -7,7 +7,8 @@ dnsmasq is a simple DNS forwarder. We're using it here so that we can configure 
 Link the configuration to the system dnsmasq config and enable dnsmasq:
 
 ```
-sudo ln -s dnsmasq.conf /etc/dnsmasq.conf
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
+sudo cp dnsmasq.conf /etc/dnsmasq.conf
 sudo systemctl start dnsmasq
 sudo systemctl enable dnsmasq
 ```
