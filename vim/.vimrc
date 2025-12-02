@@ -75,6 +75,7 @@ Plug 'gbprod/none-ls-shellcheck.nvim'
 Plug 'hhvm/vim-hack'
 Plug 'tpope/vim-endwise'
 Plug 'vim-latex/vim-latex'
+Plug 'vim-scripts/dbext.vim'
 
 " Themes
 Plug 'rakr/vim-one'
