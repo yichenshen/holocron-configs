@@ -42,3 +42,5 @@ sudo nmcli con mod enp3s0 ipv4.dns "1.1.1.1,8.8.8.8"
 sudo nmcli con mod enp3s0 ipv6.ignore-auto-dns yes
 sudo nmcli con mod enp3s0 ipv6.dns "2606:4700:4700::1111,2001:4860:4860::8888"
 ```
+
+> You'll need to set this for anything that is trying to check public DNS like ddns on OpenWRT. There you can configure ddns to use a custom DNS server.
