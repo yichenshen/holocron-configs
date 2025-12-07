@@ -1,0 +1,7 @@
+# --- Upstream DNS Servers (IPv4 & IPv6) ---
+# Cloudflare DNS
+server=2606:4700:4700::1111
+server=1.1.1.1
+# Google DNS (fallback)
+server=2001:4860:4860::8888
+server=8.8.8.8

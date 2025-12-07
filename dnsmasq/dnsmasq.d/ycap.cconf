@@ -1,0 +1,3 @@
+# AP for local
+# We can't reliably get the IPv6 from here, so just bind the IPv4
+address=/ycap.ycholocron.com/192.168.0.2

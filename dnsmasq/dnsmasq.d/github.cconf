@@ -1,0 +1,4 @@
+# Github is STILL not on IPv6, forward to nat64.net
+server=/github.com/2a01:4f9:c010:3f02::1
+server=/github.com/2a01:4f8:c2c:123f::1
+server=/github.com/2a00:1098:2c::1

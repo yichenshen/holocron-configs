@@ -1,0 +1,3 @@
+# Bind holocron dns to local
+interface-name=ycserver.ycholocron.com,enp3s0
+cname=ycholocron.com,ha.ycholocron.com,jellyfin.ycholocron.com,www.ycholocron.com,ssh.ycholocron.com,cockpit.ycholocron.com,transmission.ycholocron.com,ycmodem.ycholocron.com,ycserver.ycholocron.com
