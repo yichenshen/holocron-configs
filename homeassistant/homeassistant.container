@@ -6,11 +6,13 @@ After=network-online.target
 Image=ghcr.io/home-assistant/home-assistant:stable
 AutoUpdate=registry
 
-Volume=ha-config:/config
+Volume=ha-config:/config:U
+Volume=ha-backup:/config/backups:U
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/run/dbus:/run/dbus:ro
 
 AddCapability=CAP_NET_RAW
+AddCapability=CAP_NET_ADMIN
 AddCapability=CAP_NET_BIND_SERVICE
 
 Network=host
@@ -19,6 +21,7 @@ PodmanArgs=--privileged
 
 [Service]
 Restart=on-failure
+TimeoutStartSec=1800
 
 [Install]
 WantedBy=default.target
