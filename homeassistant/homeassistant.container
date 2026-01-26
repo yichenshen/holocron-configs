@@ -1,23 +1,25 @@
 [Unit]
 Description=A container for Home Assistant
 After=network-online.target
+Requires=dbus-auth-proxy.service
+After=dbus-auth-proxy.service
 
 [Container]
 Image=ghcr.io/home-assistant/home-assistant:stable
 AutoUpdate=registry
 
-Volume=ha-config:/config:U
-Volume=ha-backup:/config/backups:U
+Volume=ha-config:/config
+Volume=ha-backup:/config/backups
 Volume=/etc/localtime:/etc/localtime:ro
-Volume=/run/dbus:/run/dbus:ro
+Volume=dbus-socket:/run/dbus:ro
 
 AddCapability=CAP_NET_RAW
 AddCapability=CAP_NET_ADMIN
 AddCapability=CAP_NET_BIND_SERVICE
 
-Network=host
-
 PodmanArgs=--privileged
+
+Network=host
 
 [Service]
 Restart=on-failure

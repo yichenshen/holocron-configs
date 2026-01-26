@@ -7,6 +7,7 @@ Configs here are for setting up Home Assistant as a podman container. This confi
 - podman
 - systemd-container
 - NGINX
+- [dbus-auth-proxy](https://github.com/yichenshen/dbus-auth-proxy)
 
 ## NGINX
 
@@ -21,6 +22,16 @@ sudo useradd -r -m -d /home/ha -s /sbin/nologin ha
 sudo usermod -a -G systemd-journal ha
 sudo loginctl enable-linger ha
 ../docker-transmission-openvpn/allocate_subids.sh ha
+```
+
+## dbus-auth-proxy
+
+`dbus-auth-proxy` is needed for proper bluetooth access in rootless containers. Refer to the repo's README and install the container.
+
+```bash
+wget https://raw.githubusercontent.com/yichenshen/dbus-auth-proxy/refs/heads/master/dbus-auth-proxy.container
+sudo mv dbus-auth-proxy.container /home/ha/.config/containers/systemd/
+machinectl shell ha@ /usr/bin/systemctl --user daemon-restart
 ```
 
 ## Install container
