@@ -7,7 +7,7 @@ Image=ghcr.io/matter-js/python-matter-server:stable
 AutoUpdate=registry
 
 Volume=ha-matter:/data
-Volume=/run/dbus:/run/dbus:ro
+Volume=dbus-socket:/run/dbus:ro
 
 Network=host
 
