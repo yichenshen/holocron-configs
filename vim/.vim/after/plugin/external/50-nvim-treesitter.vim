@@ -1,3 +1,0 @@
-TSEnable highlight
-TSEnable incremental_selection
-TSEnable indent
