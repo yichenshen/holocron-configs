@@ -1,4 +1,4 @@
 function fish_greeting_override
-  neofetch
+  fastfetch
 end
 
