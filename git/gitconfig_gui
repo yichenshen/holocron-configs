@@ -58,6 +58,9 @@
   sp = stash pop
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   try = merge --no-commit --no-ff
+  wta = "!f() { b=\"$1\"; test -n \"$b\" || { echo \"usage: git wta <branch>\"; exit 2; }; root=\"$(git rev-parse --show-toplevel)\" || exit; git worktree add \"$(dirname \"$root\")/$(basename \"$root\")-$b\" -b \"$b\"; }; f"
+  wtr = "!f() { b=\"$1\"; test -n \"$b\" || { echo \"usage: git wtr <branch>\"; exit 2; }; root=\"$(git rev-parse --show-toplevel)\" || exit; git worktree remove \"$(dirname \"$root\")/$(basename \"$root\")-$b\"; }; f"
+
 [core]
   editor = nvim
   autocrlf = input
