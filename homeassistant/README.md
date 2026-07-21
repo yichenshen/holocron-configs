@@ -96,10 +96,10 @@ sudo firewall-cmd --reload
 To allow for HA to control Matter devices, we need to run the Matter server as well. This is done with another container.
 
 ```bash
-sudo cp matter.container /home/ha/.config/containers/systemd/
-sudo chown ha:ha /home/ha/.config/containers/systemd/matter.container
+sudo cp matter-js.container /home/ha/.config/containers/systemd/
+sudo chown ha:ha /home/ha/.config/containers/systemd/matter-js.container
 machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
-machinectl shell ha@ /usr/bin/systemctl --user start matter
+machinectl shell ha@ /usr/bin/systemctl --user start matter-js
 ```
 
 This should start the Matter server on port 5580. You can then add it as an HA integration by supplying the url with port 5580.
