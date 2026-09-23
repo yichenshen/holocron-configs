@@ -21,7 +21,7 @@ PodmanArgs=--privileged
 
 Network=host
 
-Secret=franklinwh_pass
+Secret=franklinwh_pass,type=env,target=FRANKLINWH_PASS
 
 [Service]
 Restart=on-failure
