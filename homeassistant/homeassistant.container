@@ -21,6 +21,8 @@ PodmanArgs=--privileged
 
 Network=host
 
+Secret=franklinwh_pass
+
 [Service]
 Restart=on-failure
 TimeoutStartSec=1800
