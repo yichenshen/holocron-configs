@@ -1,0 +1,19 @@
+[Unit]
+Description=Rematters Server for Storing Matter Codes
+
+[Container]
+Image=localhost/rematters:latest
+PublishPort=8099:8099
+
+Volume=rematters-data:/data:Z
+
+Environment=REMATTERS_PORT=8099
+Environment=REMATTERS_DATA=/data
+Environment=REMATTERS_OPTIONS=/data/options.json
+Environment=REMATTERS_INGRESS_FILTER=0
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
