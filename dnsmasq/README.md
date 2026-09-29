@@ -49,5 +49,4 @@ sudo nmcli con mod enp3s0 ipv6.dns "2606:4700:4700::1111,2001:4860:4860::8888"
 ## Overwritten Entries
 
 - (\*.)ycholocron.com: Overritten to local IP to avoid Cloudflare
-- ycap.ycholocron.com: Overritten to local IPv4 only due to difficulty obtaining IPv6
 - github.com: Overritten to nat64.net nameserver to enable IPv6

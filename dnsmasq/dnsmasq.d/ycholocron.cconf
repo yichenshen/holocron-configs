@@ -1,4 +1,5 @@
 # Bind holocron dns to local
-interface-name=ycserver.ycholocron.com,enp3s0
+address=/ycserver.ycholocron.com/192.168.0.2
+address=/ycserver.ycholocron.com/fd14:658d:fe00:0:8ad7:f6ff:fe54:e99f
 cname=ycholocron.com,ha.ycholocron.com,jellyfin.ycholocron.com,www.ycholocron.com,ssh.ycholocron.com,cockpit.ycholocron.com,transmission.ycholocron.com,omada.ycholocron.com,ycserver.ycholocron.com
 cname=local.ycholocron.com,franklin.local.ycholocron.com,rematters.local.ycholocron.com,matter.local.ycholocron.com,otbr.local.ycholocron.com,ycserver.ycholocron.com
