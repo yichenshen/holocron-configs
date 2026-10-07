@@ -1,5 +1,5 @@
 # Bind holocron dns to local
-host-record=ycserver.ycholocron.com,192.168.0.2,fd14:658d:fe00:0:8ad7:f6ff:fe54:e99f
+host-record=ycholocron.com,192.168.0.2,fd14:658d:fe00:0:8ad7:f6ff:fe54:e99f
 
-cname=ycholocron.com,jellyfin.ycholocron.com,www.ycholocron.com,ssh.ycholocron.com,cockpit.ycholocron.com,transmission.ycholocron.com,omada.ycholocron.com,ycserver.ycholocron.com
-cname=local.ycholocron.com,franklin.local.ycholocron.com,rematters.local.ycholocron.com,matter.local.ycholocron.com,ha.local.ycholocron.com,otbr.local.ycholocron.com,ycserver.ycholocron.com
+cname=jellyfin.ycholocron.com,www.ycholocron.com,ssh.ycholocron.com,cockpit.ycholocron.com,transmission.ycholocron.com,omada.ycholocron.com,ycholocron.com
+cname=local.ycholocron.com,franklin.local.ycholocron.com,rematters.local.ycholocron.com,matter.local.ycholocron.com,ha.local.ycholocron.com,otbr.local.ycholocron.com,ycholocron.com
