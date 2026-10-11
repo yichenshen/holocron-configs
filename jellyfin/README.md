@@ -55,6 +55,12 @@ sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
 nvidia-ctk cdi list
 ```
 
+`nvidia-cdi-generate.service` will run this at startup before podman.
+```bash
+sudo cp nvidia-cdi-generate.service /etc/systemd/system/
+sudo systemctl enable nvidia-cdi-generate.service
+```
+
 ## Setup data directory
 
 ```bash

@@ -1,0 +1,14 @@
+[Unit]
+Description=Generate NVIDIA CDI Specification File
+DefaultDependencies=no
+After=systemd-modules-load.service
+Before=podman.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/usr/bin/mkdir -p /etc/cdi
+ExecStart=/usr/bin/nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
+
+[Install]
+WantedBy=multi-user.target
