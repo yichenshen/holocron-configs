@@ -1,0 +1,23 @@
+[Unit]
+Description=Eclipse Mosquitto MQTT Broker
+After=network-online.target
+
+[Container]
+Image=docker.io/library/eclipse-mosquitto:latest
+AutoUpdate=registry
+
+PublishPort=1883:1883/tcp
+PublishPort=8883:8883/tcp
+
+Volume=mosquitto-config:/mosquitto/config:Z
+Volume=mosquitto-data:/mosquitto/data:Z
+Volume=mosquitto-log:/mosquitto/log:Z
+
+Secret=mosquitto_pass,type=mount,target=/run/secrets/mosquitto_password
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=1800
+
+[Install]
+WantedBy=default.target

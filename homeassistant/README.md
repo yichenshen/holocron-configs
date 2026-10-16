@@ -114,3 +114,54 @@ sudo firewall-cmd --add-service=mdns --permanent
 ```
 
 After this, HA's Thread integration should pick up any border routers you have, assuming they're on the same VLAN. You can follow the [instructions](https://www.home-assistant.io/integrations/thread) to configure the default Thread network. You'll be able to add Matter on Thread devices like any other Matter device after this.
+
+## MQTT
+
+To setup a MQTT broker, copy `mqtt.container` to the neccessary path as well.
+
+```
+sudo cp mqtt.container /home/ha/.config/containers/systemd/
+sudo chown ha:ha /home/ha/.config/containers/systemd/mqtt.container
+```
+
+You'll need to create a podman secret call `mosquitto_pass` to use as the password. This is mounted in `/run/secrets/mosquitto_password`. One trick is to create a dummy password first, then start the container.
+
+In the ha user:
+
+```
+echo "AAA" | podman secret create mosquitto_pass -
+```
+
+In the main user:
+
+```
+machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
+machinectl shell ha@ /usr/bin/systemctl --user start mqtt
+```
+
+This starts MQTT **without** auth configured. You can then use exec to generate a password and replace it.
+
+```
+podman exec -it systemd-mqtt mosquitto_passwd -c /mosquitto/data/mosquitto_pass homeassistant
+cd $(podman unshare podman volume mount mosquitto-data)
+cp mosquitto_pass ~
+sudo rm mosquitto_pass
+cd ~
+podman secret rm mosquitto_pass
+podman secret create mosquitto_pass mosquitto_pass
+rm mosquitto_pass
+```
+
+Then open up `$(podman unshare podman volume mount mosquitto-config)/mosquitto.conf`, and change the following:
+
+```
+allow_anonymous false
+password_file /run/secrets/mosquitto_password
+```
+
+Now restart and you should be able to use the MQT broker with the `homeassistant` user and the configured password.
+
+```
+machinectl shell ha@ /usr/bin/systemctl --user daemon-reload
+machinectl shell ha@ /usr/bin/systemctl --user restart mqtt
+```
