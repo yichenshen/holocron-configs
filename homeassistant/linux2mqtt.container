@@ -1,0 +1,21 @@
+[Unit]
+Description=Linux2MQTT Power Estimate Monitor
+After=network-online.target
+
+[Container]
+Image=ghcr.io/yichenshen/linux2mqtt:dev
+AutoUpdate=registry
+
+Environment=PUBLISH_INTERVAL=30
+Environment=PUBLISH_DELTA=0
+
+Environment=MQTT_HOST=host.containers.internal
+Secret=linux2mqtt_user,type=env,target=MQTT_USER
+Secret=linux2mqtt_pass,type=env,target=MQTT_PASSWORD
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=1800
+
+[Install]
+WantedBy=default.target
